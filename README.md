@@ -10,8 +10,8 @@ Validating Web deployments on content delivery platform.
 ```
 terraform --version
 ```
-2. Install [Azure CLI](https://developer.hashicorp.com/terraform/downloads)
-> *Windows machine should be pre-installed with Azure CLI (Skip this step if Step 3 is working)
+2. Install [Azure CLI](https://developer.hashicorp.com/terraform/downloads) (Skip this step if Step 3 is working)
+> *Windows machine should be pre-installed with Azure CLI
 
 3. Login to your Azure Account
 ```
