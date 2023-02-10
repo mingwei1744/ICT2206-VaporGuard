@@ -17,7 +17,7 @@ terraform --version
 ```
 az login
 ```
-![azlogin]()
+![azlogin](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/azlogin.png)
 
 ## Deployment
 a) Generate a key in the /TerraformDemo/keys directory (Mimicking Lab steps)
@@ -26,7 +26,7 @@ a) Generate a key in the /TerraformDemo/keys directory (Mimicking Lab steps)
 cd /TerraformDemo/keys
 ssh-keygen -t ecdsa -b 521
 ```
-![keypair]()
+![keypair](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/keypair.png)
 
 a) Initialize a working directory containing Terraform configuration files.
 > From the main working directory /TerraformDemo run terraform init
