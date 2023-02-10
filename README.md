@@ -4,5 +4,46 @@ ICT2206 Web Security Assignment-1. The development of a defensive web applicatio
 ## VapourGuard 🛡️
 Validating Web deployments on content delivery platform.
 
-## Installation
-I'll update the dependencies and steps required for deployment 
+## Setup
+1. Download [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) and add binary to PATH <br />
+> Check if Terraform has been successfully installed <br />
+```
+terraform --version
+```
+2. Install [Azure CLI](https://developer.hashicorp.com/terraform/downloads)
+> *Windows machine should be pre-installed with Azure CLI (Skip this step if Step 3 is working)
+
+3. Login to your Azure Account
+```
+az login
+```
+![azlogin]()
+
+## Deployment
+a) Generate a key in the /TerraformDemo/keys directory (Mimicking Lab steps)
+> *Do not commit the keys to the Github repo! 
+```
+cd /TerraformDemo/keys
+ssh-keygen -t ecdsa -b 521
+```
+![keypair]()
+
+a) Initialize a working directory containing Terraform configuration files.
+> From the main working directory /TerraformDemo run terraform init
+```
+terraform init
+```
+
+b) Preview execution plan
+> From the main working directory /TerraformDemo run terraform plan.
+```
+terraform plan
+```
+
+c) Start deployment
+> From the main working directory /TerraformDemo run terraform apply.
+```
+terraform apply
+```
+
+**Pending TODOs commented in the script
