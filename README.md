@@ -28,8 +28,9 @@ ssh-keygen -t ecdsa -b 521
 ```
 ![keypair](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/keypair.png)
 
-b) Edit your domain name in /TerraformDemo/scripts/lempstack.tpl
+b) Edit your FQ domain name in /TerraformDemo/scripts/lempstack.tpl
 > E.g., www.my-domain.com ; Remember to bind your domain name in Porkbun after deployment
+
 ![domainname](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/domain.png)
 
 c) Initialize a working directory containing Terraform configuration files.
