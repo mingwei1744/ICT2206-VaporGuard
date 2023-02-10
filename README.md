@@ -51,4 +51,12 @@ e) Start deployment
 terraform apply
 ```
 
-**Pending TODOs commented in the script
+## Teardown
+a) To remove all objects deployed
+> From the main working directory /TerraformDemo run terraform destroy
+```
+terraform destroy
+```
+
+
+**Pending TODOs commented
