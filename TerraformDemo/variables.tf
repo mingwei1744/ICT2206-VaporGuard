@@ -12,3 +12,9 @@ variable "naming" {
   type        = string
   default     = "automato"
 }
+
+variable "dnsname" {
+  description = "DNS naming"
+  type        = string
+  default     = "dns-automato-test"
+}

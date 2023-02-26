@@ -100,7 +100,7 @@ resource "azurerm_public_ip" "pip-automate-test" {
   sku                     = "Basic"
   allocation_method       = "Dynamic"
   idle_timeout_in_minutes = "4"
-  domain_name_label       = "pip-automate-test"
+  domain_name_label       = var.dnsname
 
   tags = {
     unit    = "2206"
