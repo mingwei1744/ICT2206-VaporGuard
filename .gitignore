@@ -29,4 +29,9 @@ override.tf.json
 # example: *tfplan*
 
 # keys directory
-**/.keys/*
+**/keys/*
+
+# key files
+id_rsa
+id_ecdsa
+*.pub*
