@@ -1,17 +1,53 @@
 /*
-Testing cloud-init custom_data, alternative solution in main.tf
+Cloud-init custom_data
 */
 
-# data "template_file" "script_lempstack" {
-#   template = file("${path.module}/scripts/runscript.sh")
-# }
+# Template file for the respective scripts
+data "template_file" "script_server_config" {
+  template = file("${path.module}/scripts/config_server.tpl")
 
-# data "template_cloudinit_config" "config_lempstack" {
-#   gzip          = false
-#   base64_encode = true
+  vars = {
+    rootUser = "${var.admin-user}"
+    webUser = "${var.web-user}"
+  }
+}
 
-#   part {
-#     content_type = "text/x-shellscript"
-#     content      = data.template_file.script_lempstack.rendered
-#   }
-# }
+data "template_file" "script_lemp_config" {
+  template = file("${path.module}/scripts/config_lemp.tpl")
+
+  vars = {
+    databasePwd = "${var.database-pwd}"
+    domainName = "${var.website-dns}"
+  }
+}
+
+data "template_file" "script_web_config" {
+  template = file("${path.module}/scripts/config_web.tpl")
+
+  vars = {
+    domainName = "${var.website-dns}"
+  }
+}
+
+# Consolidate into cloudinit config in sequence
+data "template_cloudinit_config" "configs" {
+  gzip          = false
+  base64_encode = true
+
+  # Run Part 1 (User, UFW)
+  part {
+    content_type = "text/x-shellscript"
+    content      = data.template_file.script_server_config.rendered
+  }
+  # then Part 2 (LEMP stack)
+  part {
+    content_type = "text/x-shellscript"
+    content      = data.template_file.script_lemp_config.rendered
+  }
+  
+  # then Part 3 (HTTPS, HTTP2)
+  part {
+    content_type = "text/x-shellscript"
+    content      = data.template_file.script_web_config.rendered
+  }
+}

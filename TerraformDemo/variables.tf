@@ -13,8 +13,32 @@ variable "naming" {
   default     = "automato"
 }
 
-variable "dnsname" {
-  description = "DNS naming"
+variable "vm-dns" {
+  description = "DNS for VM public IP"
   type        = string
-  default     = "dns-automato-test"
+  default     = "dns-xm-test" // CHANGE THIS TO YOUR PREFERRED VM DNS *UNQ
+}
+
+variable "admin-user" {
+  description = "Admin user of server (root)"
+  type        = string
+  default     = "adminuser"
+}
+
+variable "web-user" {
+  description = "Web application user of server"
+  type        = string
+  default     = "webadm"
+}
+
+variable "website-dns" {
+  description = "Domain name for website public IP"
+  type        = string
+  default     = "INSERTYOURPORKBUNDOMAIN" // CHANGE THIS TO YOUR PORKBUN DOMAIN NAME *UNQ
+}
+
+variable "database-pwd" {
+  description = "Access code for database"
+  type        = string
+  default     = "dbP@assw0rd"
 }

@@ -100,7 +100,7 @@ resource "azurerm_public_ip" "pip-automate-test" {
   sku                     = "Basic"
   allocation_method       = "Dynamic"
   idle_timeout_in_minutes = "4"
-  domain_name_label       = var.dnsname
+  domain_name_label       = var.vm-dns
 
   tags = {
     unit    = "2206"
@@ -130,12 +130,12 @@ resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
   location            = azurerm_resource_group.rg-automate-test.location
 
   size                  = "Standard_B1s"
-  admin_username        = "adminuser"
+  admin_username        = "${var.admin-user}"
   network_interface_ids = [azurerm_network_interface.nic-automate-test.id]
 
   # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully
-  custom_data = filebase64("${path.module}/scripts/lempstack.tpl")
-  //custom_data = data.template_cloudinit_config.config_lempstack.rendered
+  //custom_data = filebase64("${path.module}/scripts/lempstack.tpl")
+  custom_data = data.template_cloudinit_config.configs.rendered
 
   # Public key for SSH
   /*
@@ -144,7 +144,7 @@ resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
   2. generate key pair every deployment and destroy every destruction (generate every deployment)
   */
   admin_ssh_key {
-    username = "adminuser"
+    username = "${var.admin-user}"
     # Ensure path to public key is correct
     # TODO: SCRIPTING TO LOOK FOR PUBKEY
     #public_key = file("~/.ssh/id_rsa.pub") # Linux environment
