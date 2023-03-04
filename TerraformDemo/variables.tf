@@ -34,11 +34,17 @@ variable "web-user" {
 variable "website-dns" {
   description = "Domain name for website public IP"
   type        = string
-  default     = "INSERTYOURPORKBUNDOMAIN" // CHANGE THIS TO YOUR PORKBUN DOMAIN NAME *UNQ
+  default     = "WWW.YOURPBDOMAIN.COM" // CHANGE THIS TO YOUR PORKBUN DOMAIN NAME *UNQ
 }
 
 variable "database-pwd" {
   description = "Access code for database"
   type        = string
   default     = "dbP@assw0rd"
+}
+
+variable "email" {
+  description = "Email for certbot"
+  type        = string
+  default     = "YOUREMAIL@EMAIL.COM" // CHANGE TO YOUR EMAIL
 }

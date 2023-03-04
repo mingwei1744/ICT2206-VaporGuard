@@ -1,12 +1,33 @@
 #!/bin/bash
 # Script2. LEMPstack configurations
 
-timestamp=`date "+%Y-%m-%d %H:%M:%S"`
-log="/home/adminuser/config.log"
-
+root="${rootUser}"
 database_pwd="${databasePwd}"
 domain="${domainName}"
 
+timestamp=`date "+%Y-%m-%d %H:%M:%S"`
+log="/home/$root/config.log"
+
+function install_pkg() {
+  sudo apt install $1 -y
+
+  if [ $? -eq 0 ]; then
+    echo "$timestamp Installed $1" >> $log
+  else
+    echo "$timestamp Failed to install $1" >> $log
+  fi
+}
+
+function execute_chk() {
+  eval "$1"
+
+  if [ $? -eq 0 ]; then
+    echo "$timestamp Success: $1"
+  else
+    echo "$timestamp Failed: $1"
+  fi
+}
+install_pkg "net-tools"
 #===================================================================#
 # Install LEMP Stack
 #===================================================================#
@@ -14,8 +35,6 @@ domain="${domainName}"
 sudo apt install nginx-extras -y
 sudo ufw allow 'Nginx Full'
 echo "$timestamp Installed Nginx" >> $log
-echo "Domain Name for web $domain" >> $log 
-echo "DB $database_pwd" >> $log
 
 # Install MariaDB
 sudo apt install mariadb-server -y

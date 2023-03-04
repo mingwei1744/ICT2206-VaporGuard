@@ -130,7 +130,7 @@ resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
   location            = azurerm_resource_group.rg-automate-test.location
 
   size                  = "Standard_B1s"
-  admin_username        = "${var.admin-user}"
+  admin_username        = var.admin-user
   network_interface_ids = [azurerm_network_interface.nic-automate-test.id]
 
   # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully
@@ -144,7 +144,7 @@ resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
   2. generate key pair every deployment and destroy every destruction (generate every deployment)
   */
   admin_ssh_key {
-    username = "${var.admin-user}"
+    username = var.admin-user
     # Ensure path to public key is correct
     # TODO: SCRIPTING TO LOOK FOR PUBKEY
     #public_key = file("~/.ssh/id_rsa.pub") # Linux environment
