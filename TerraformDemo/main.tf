@@ -100,7 +100,7 @@ resource "azurerm_public_ip" "pip-automate-test" {
   sku                     = "Basic"
   allocation_method       = "Dynamic"
   idle_timeout_in_minutes = "4"
-  domain_name_label       = var.dnsname
+  domain_name_label       = "pip-automate-test"
 
   tags = {
     unit    = "2206"
@@ -134,8 +134,8 @@ resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
   network_interface_ids = [azurerm_network_interface.nic-automate-test.id]
 
   # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully
-  custom_data = filebase64("${path.module}/scripts/lempstack.tpl")
-  //custom_data = data.template_cloudinit_config.config_lempstack.rendered
+  //custom_data = filebase64("${path.module}/scripts/lempstack.tpl")
+   custom_data = filebase64("${path.module}/scripts/lempstack.tpl")
 
   # Public key for SSH
   /*
