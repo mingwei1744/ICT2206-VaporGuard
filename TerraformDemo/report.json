@@ -1,0 +1,2877 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_AZURE_183",
+                "bc_check_id": null,
+                "check_name": "Ensure that VNET uses local DNS addresses",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        16,
+                        "resource \"azurerm_virtual_network\" \"vn-automate-test\" {\n"
+                    ],
+                    [
+                        17,
+                        "  name                = \"${var.naming}-virtual-network\"\n"
+                    ],
+                    [
+                        18,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        19,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        20,
+                        "  address_space       = [\"10.2.0.0/16\"]\n"
+                    ],
+                    [
+                        21,
+                        "\n"
+                    ],
+                    [
+                        22,
+                        "  tags = {\n"
+                    ],
+                    [
+                        23,
+                        "    unit    = \"2206\"\n"
+                    ],
+                    [
+                        24,
+                        "    project = \"cloud-automation\"\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    16,
+                    26
+                ],
+                "resource": "azurerm_virtual_network.vn-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VnetLocalDNS",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_182",
+                "bc_check_id": null,
+                "check_name": "Ensure that VNET has at least 2 connected DNS Endpoints",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        16,
+                        "resource \"azurerm_virtual_network\" \"vn-automate-test\" {\n"
+                    ],
+                    [
+                        17,
+                        "  name                = \"${var.naming}-virtual-network\"\n"
+                    ],
+                    [
+                        18,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        19,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        20,
+                        "  address_space       = [\"10.2.0.0/16\"]\n"
+                    ],
+                    [
+                        21,
+                        "\n"
+                    ],
+                    [
+                        22,
+                        "  tags = {\n"
+                    ],
+                    [
+                        23,
+                        "    unit    = \"2206\"\n"
+                    ],
+                    [
+                        24,
+                        "    project = \"cloud-automation\"\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    16,
+                    26
+                ],
+                "resource": "azurerm_virtual_network.vn-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VnetSingleDNSServer",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_9",
+                "bc_check_id": null,
+                "check_name": "Ensure that RDP access is restricted from the internet",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "security_rule"
+                    ]
+                },
+                "code_block": [
+                    [
+                        37,
+                        "resource \"azurerm_network_security_group\" \"sg-automate-test\" {\n"
+                    ],
+                    [
+                        38,
+                        "  name                = \"${var.naming}-security-group\"\n"
+                    ],
+                    [
+                        39,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        40,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        41,
+                        "\n"
+                    ],
+                    [
+                        42,
+                        "  # Security Rule to allow SSH\n"
+                    ],
+                    [
+                        43,
+                        "  #TODO: Remove default SSH port 22 and add port 1002 for SSH\n"
+                    ],
+                    [
+                        44,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        45,
+                        "    name                       = \"sshd\"\n"
+                    ],
+                    [
+                        46,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        47,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        48,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        49,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        50,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        51,
+                        "    destination_port_range     = \"22\"\n"
+                    ],
+                    [
+                        52,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        53,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        54,
+                        "  }\n"
+                    ],
+                    [
+                        55,
+                        "\n"
+                    ],
+                    [
+                        56,
+                        "  # Security Rule to allow http\n"
+                    ],
+                    [
+                        57,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        58,
+                        "    name                       = \"AllowhHttp\"\n"
+                    ],
+                    [
+                        59,
+                        "    priority                   = 110\n"
+                    ],
+                    [
+                        60,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        61,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        62,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        63,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        64,
+                        "    destination_port_range     = \"80\"\n"
+                    ],
+                    [
+                        65,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        66,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        67,
+                        "  }\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  # Security Rule to allow https\n"
+                    ],
+                    [
+                        70,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        71,
+                        "    name                       = \"AllowHttps\"\n"
+                    ],
+                    [
+                        72,
+                        "    priority                   = 120\n"
+                    ],
+                    [
+                        73,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        74,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        75,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        76,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        77,
+                        "    destination_port_range     = \"443\"\n"
+                    ],
+                    [
+                        78,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        79,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        80,
+                        "  }\n"
+                    ],
+                    [
+                        81,
+                        "\n"
+                    ],
+                    [
+                        82,
+                        "  tags = {\n"
+                    ],
+                    [
+                        83,
+                        "    unit    = \"2206\"\n"
+                    ],
+                    [
+                        84,
+                        "    project = \"cloud-automation\"\n"
+                    ],
+                    [
+                        85,
+                        "  }\n"
+                    ],
+                    [
+                        86,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    37,
+                    86
+                ],
+                "resource": "azurerm_network_security_group.sg-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleRDPAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_77",
+                "bc_check_id": null,
+                "check_name": "Ensure that UDP Services are restricted from the Internet ",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "security_rule"
+                    ]
+                },
+                "code_block": [
+                    [
+                        37,
+                        "resource \"azurerm_network_security_group\" \"sg-automate-test\" {\n"
+                    ],
+                    [
+                        38,
+                        "  name                = \"${var.naming}-security-group\"\n"
+                    ],
+                    [
+                        39,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        40,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        41,
+                        "\n"
+                    ],
+                    [
+                        42,
+                        "  # Security Rule to allow SSH\n"
+                    ],
+                    [
+                        43,
+                        "  #TODO: Remove default SSH port 22 and add port 1002 for SSH\n"
+                    ],
+                    [
+                        44,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        45,
+                        "    name                       = \"sshd\"\n"
+                    ],
+                    [
+                        46,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        47,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        48,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        49,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        50,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        51,
+                        "    destination_port_range     = \"22\"\n"
+                    ],
+                    [
+                        52,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        53,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        54,
+                        "  }\n"
+                    ],
+                    [
+                        55,
+                        "\n"
+                    ],
+                    [
+                        56,
+                        "  # Security Rule to allow http\n"
+                    ],
+                    [
+                        57,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        58,
+                        "    name                       = \"AllowhHttp\"\n"
+                    ],
+                    [
+                        59,
+                        "    priority                   = 110\n"
+                    ],
+                    [
+                        60,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        61,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        62,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        63,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        64,
+                        "    destination_port_range     = \"80\"\n"
+                    ],
+                    [
+                        65,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        66,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        67,
+                        "  }\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  # Security Rule to allow https\n"
+                    ],
+                    [
+                        70,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        71,
+                        "    name                       = \"AllowHttps\"\n"
+                    ],
+                    [
+                        72,
+                        "    priority                   = 120\n"
+                    ],
+                    [
+                        73,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        74,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        75,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        76,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        77,
+                        "    destination_port_range     = \"443\"\n"
+                    ],
+                    [
+                        78,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        79,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        80,
+                        "  }\n"
+                    ],
+                    [
+                        81,
+                        "\n"
+                    ],
+                    [
+                        82,
+                        "  tags = {\n"
+                    ],
+                    [
+                        83,
+                        "    unit    = \"2206\"\n"
+                    ],
+                    [
+                        84,
+                        "    project = \"cloud-automation\"\n"
+                    ],
+                    [
+                        85,
+                        "  }\n"
+                    ],
+                    [
+                        86,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    37,
+                    86
+                ],
+                "resource": "azurerm_network_security_group.sg-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleUDPAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_118",
+                "bc_check_id": null,
+                "check_name": "Ensure that Network Interfaces disable IP forwarding",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "enable_ip_forwarding"
+                    ]
+                },
+                "code_block": [
+                    [
+                        113,
+                        "resource \"azurerm_network_interface\" \"nic-automate-test\" {\n"
+                    ],
+                    [
+                        114,
+                        "  name                = \"${var.naming}-nic\"\n"
+                    ],
+                    [
+                        115,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        116,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        117,
+                        "\n"
+                    ],
+                    [
+                        118,
+                        "  ip_configuration {\n"
+                    ],
+                    [
+                        119,
+                        "    name                          = \"internal\"\n"
+                    ],
+                    [
+                        120,
+                        "    subnet_id                     = azurerm_subnet.sn-automate-test.id\n"
+                    ],
+                    [
+                        121,
+                        "    private_ip_address_allocation = \"Dynamic\"\n"
+                    ],
+                    [
+                        122,
+                        "    public_ip_address_id          = azurerm_public_ip.pip-automate-test.id\n"
+                    ],
+                    [
+                        123,
+                        "  }\n"
+                    ],
+                    [
+                        124,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    113,
+                    124
+                ],
+                "resource": "azurerm_network_interface.nic-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NetworkInterfaceEnableIPForwarding",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_92",
+                "bc_check_id": null,
+                "check_name": "Ensure that Virtual Machines use managed disks",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VMStorageOsDisk",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_AZURE_160",
+                "bc_check_id": null,
+                "check_name": "Ensure that HTTP (port 80) access is restricted from the internet",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "security_rule/[1]/access",
+                        "security_rule/[1]/direction",
+                        "security_rule/[1]/protocol",
+                        "security_rule/[1]/destination_port_range",
+                        "security_rule/[1]/destination_port_ranges",
+                        "security_rule/[1]/source_address_prefix",
+                        "security_rule/[1]/source_address_prefixes"
+                    ]
+                },
+                "code_block": [
+                    [
+                        37,
+                        "resource \"azurerm_network_security_group\" \"sg-automate-test\" {\n"
+                    ],
+                    [
+                        38,
+                        "  name                = \"${var.naming}-security-group\"\n"
+                    ],
+                    [
+                        39,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        40,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        41,
+                        "\n"
+                    ],
+                    [
+                        42,
+                        "  # Security Rule to allow SSH\n"
+                    ],
+                    [
+                        43,
+                        "  #TODO: Remove default SSH port 22 and add port 1002 for SSH\n"
+                    ],
+                    [
+                        44,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        45,
+                        "    name                       = \"sshd\"\n"
+                    ],
+                    [
+                        46,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        47,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        48,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        49,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        50,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        51,
+                        "    destination_port_range     = \"22\"\n"
+                    ],
+                    [
+                        52,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        53,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        54,
+                        "  }\n"
+                    ],
+                    [
+                        55,
+                        "\n"
+                    ],
+                    [
+                        56,
+                        "  # Security Rule to allow http\n"
+                    ],
+                    [
+                        57,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        58,
+                        "    name                       = \"AllowhHttp\"\n"
+                    ],
+                    [
+                        59,
+                        "    priority                   = 110\n"
+                    ],
+                    [
+                        60,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        61,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        62,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        63,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        64,
+                        "    destination_port_range     = \"80\"\n"
+                    ],
+                    [
+                        65,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        66,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        67,
+                        "  }\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  # Security Rule to allow https\n"
+                    ],
+                    [
+                        70,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        71,
+                        "    name                       = \"AllowHttps\"\n"
+                    ],
+                    [
+                        72,
+                        "    priority                   = 120\n"
+                    ],
+                    [
+                        73,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        74,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        75,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        76,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        77,
+                        "    destination_port_range     = \"443\"\n"
+                    ],
+                    [
+                        78,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        79,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        80,
+                        "  }\n"
+                    ],
+                    [
+                        81,
+                        "\n"
+                    ],
+                    [
+                        82,
+                        "  tags = {\n"
+                    ],
+                    [
+                        83,
+                        "    unit    = \"2206\"\n"
+                    ],
+                    [
+                        84,
+                        "    project = \"cloud-automation\"\n"
+                    ],
+                    [
+                        85,
+                        "  }\n"
+                    ],
+                    [
+                        86,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    37,
+                    86
+                ],
+                "resource": "azurerm_network_security_group.sg-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleHTTPAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_10",
+                "bc_check_id": null,
+                "check_name": "Ensure that SSH access is restricted from the internet",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "security_rule/[0]/access",
+                        "security_rule/[0]/direction",
+                        "security_rule/[0]/protocol",
+                        "security_rule/[0]/destination_port_range",
+                        "security_rule/[0]/destination_port_ranges",
+                        "security_rule/[0]/source_address_prefix",
+                        "security_rule/[0]/source_address_prefixes"
+                    ]
+                },
+                "code_block": [
+                    [
+                        37,
+                        "resource \"azurerm_network_security_group\" \"sg-automate-test\" {\n"
+                    ],
+                    [
+                        38,
+                        "  name                = \"${var.naming}-security-group\"\n"
+                    ],
+                    [
+                        39,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        40,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        41,
+                        "\n"
+                    ],
+                    [
+                        42,
+                        "  # Security Rule to allow SSH\n"
+                    ],
+                    [
+                        43,
+                        "  #TODO: Remove default SSH port 22 and add port 1002 for SSH\n"
+                    ],
+                    [
+                        44,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        45,
+                        "    name                       = \"sshd\"\n"
+                    ],
+                    [
+                        46,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        47,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        48,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        49,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        50,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        51,
+                        "    destination_port_range     = \"22\"\n"
+                    ],
+                    [
+                        52,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        53,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        54,
+                        "  }\n"
+                    ],
+                    [
+                        55,
+                        "\n"
+                    ],
+                    [
+                        56,
+                        "  # Security Rule to allow http\n"
+                    ],
+                    [
+                        57,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        58,
+                        "    name                       = \"AllowhHttp\"\n"
+                    ],
+                    [
+                        59,
+                        "    priority                   = 110\n"
+                    ],
+                    [
+                        60,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        61,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        62,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        63,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        64,
+                        "    destination_port_range     = \"80\"\n"
+                    ],
+                    [
+                        65,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        66,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        67,
+                        "  }\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  # Security Rule to allow https\n"
+                    ],
+                    [
+                        70,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        71,
+                        "    name                       = \"AllowHttps\"\n"
+                    ],
+                    [
+                        72,
+                        "    priority                   = 120\n"
+                    ],
+                    [
+                        73,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        74,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        75,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        76,
+                        "    source_port_range          = \"*\"\n"
+                    ],
+                    [
+                        77,
+                        "    destination_port_range     = \"443\"\n"
+                    ],
+                    [
+                        78,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        79,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        80,
+                        "  }\n"
+                    ],
+                    [
+                        81,
+                        "\n"
+                    ],
+                    [
+                        82,
+                        "  tags = {\n"
+                    ],
+                    [
+                        83,
+                        "    unit    = \"2206\"\n"
+                    ],
+                    [
+                        84,
+                        "    project = \"cloud-automation\"\n"
+                    ],
+                    [
+                        85,
+                        "  }\n"
+                    ],
+                    [
+                        86,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    37,
+                    86
+                ],
+                "resource": "azurerm_network_security_group.sg-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleSSHAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_50",
+                "bc_check_id": null,
+                "check_name": "Ensure Virtual Machine Extensions are not Installed",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "allow_extension_operations"
+                    ]
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.AzureInstanceExtensions",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_179",
+                "bc_check_id": null,
+                "check_name": "Ensure VM agent is installed",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "provision_vm_agent"
+                    ]
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VMAgentIsInstalled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_177",
+                "bc_check_id": null,
+                "check_name": "Ensure Windows VM enables automatic updates",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "enable_automatic_updates"
+                    ]
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.WinVMAutomaticUpdates",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_151",
+                "bc_check_id": null,
+                "check_name": "Ensure Windows VM enables encryption",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "encryption_at_host_enabled"
+                    ]
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.WinVMEncryptionAtHost",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_119",
+                "bc_check_id": null,
+                "check_name": "Ensure that Network Interfaces don't use public IPs",
+                "check_result": {
+                    "result": "FAILED",
+                    "entity": {
+                        "azurerm_network_interface": {
+                            "nic-automate-test": {
+                                "__end_line__": 124,
+                                "__start_line__": 113,
+                                "ip_configuration": [
+                                    {
+                                        "name": [
+                                            "internal"
+                                        ],
+                                        "private_ip_address_allocation": [
+                                            "Dynamic"
+                                        ],
+                                        "public_ip_address_id": [
+                                            "azurerm_public_ip.pip-automate-test.id"
+                                        ],
+                                        "subnet_id": [
+                                            "azurerm_subnet.sn-automate-test.id"
+                                        ]
+                                    }
+                                ],
+                                "location": [
+                                    "East US"
+                                ],
+                                "name": [
+                                    "automato-nic"
+                                ],
+                                "resource_group_name": [
+                                    "automato-resource-group"
+                                ],
+                                "__address__": "azurerm_network_interface.nic-automate-test"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "resource_type"
+                    ]
+                },
+                "code_block": [
+                    [
+                        113,
+                        "resource \"azurerm_network_interface\" \"nic-automate-test\" {\n"
+                    ],
+                    [
+                        114,
+                        "  name                = \"${var.naming}-nic\"\n"
+                    ],
+                    [
+                        115,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        116,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        117,
+                        "\n"
+                    ],
+                    [
+                        118,
+                        "  ip_configuration {\n"
+                    ],
+                    [
+                        119,
+                        "    name                          = \"internal\"\n"
+                    ],
+                    [
+                        120,
+                        "    subnet_id                     = azurerm_subnet.sn-automate-test.id\n"
+                    ],
+                    [
+                        121,
+                        "    private_ip_address_allocation = \"Dynamic\"\n"
+                    ],
+                    [
+                        122,
+                        "    public_ip_address_id          = azurerm_public_ip.pip-automate-test.id\n"
+                    ],
+                    [
+                        123,
+                        "  }\n"
+                    ],
+                    [
+                        124,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    113,
+                    124
+                ],
+                "resource": "azurerm_network_interface.nic-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 6,
+        "failed": 7,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 9,
+        "checkov_version": "2.3.58"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

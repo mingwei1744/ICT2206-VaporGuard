@@ -19,8 +19,8 @@ variable "dnsname" {
   type        = string
   default     = "rg-2206-lab-dev-eastus-2102596"
 }
-
+#replace default with your
 variable "tf_config_file" {
   type    = string
-  default = "A:/Users/JJ/Documents/GitHub/ICT2206-VapourGuard/TerraformDemo/main.tf"
+  default = "./main.tf"
 }

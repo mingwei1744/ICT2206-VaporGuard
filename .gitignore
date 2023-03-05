@@ -35,3 +35,5 @@ override.tf.json
 id_rsa
 id_ecdsa
 *.pub*
+TerraformDemo/test.py
+TerraformDemo/test2.py

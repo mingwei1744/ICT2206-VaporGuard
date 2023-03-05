@@ -1,32 +1,102 @@
-
 Found 1 CVEs:
 CVE ID: CVE-2021-27075
 Description: Azure Virtual Machine Information Disclosure Vulnerability
 Base Score: 2.7
-
-references: []
-
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
 WARNING: Security rule sshd is using default SSH port
 Found 1 CVEs:
 CVE ID: CVE-2021-27075
 Description: Azure Virtual Machine Information Disclosure Vulnerability
 Base Score: 2.7
-
-references: []
-
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
 WARNING: Security rule sshd is using default SSH port
 Found 1 CVEs:
 CVE ID: CVE-2021-27075
 Description: Azure Virtual Machine Information Disclosure Vulnerability
 Base Score: 2.7
-
-references: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
-
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
 Found 1 CVEs:
 CVE ID: CVE-2021-27075
 Description: Azure Virtual Machine Information Disclosure Vulnerability
 Base Score: 2.7
-
-references: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
-
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
+WARNING: Security rule sshd is using default SSH port
+Found 1 CVEs:
+CVE ID: CVE-2021-27075
+Description: Azure Virtual Machine Information Disclosure Vulnerability
+Base Score: 2.7
+References: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-27075
 WARNING: Security rule sshd is using default SSH port
