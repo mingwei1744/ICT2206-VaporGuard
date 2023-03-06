@@ -1,0 +1,7 @@
+# naming = ""
+# vm-dns = ""
+# admin-user = ""
+# web-user = ""
+# website-dns = ""
+# database-pwd = ""
+# email = ""

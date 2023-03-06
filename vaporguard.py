@@ -60,6 +60,7 @@ conf = UserConfig()
 # -------------------------------------------------------------------------------
 # Start of VaporGuard program
 # Get user input
+# TODO: Add a stage to generate keypair?
 # -------------------------------------------------------------------------------
 def config_init():
     config_resource_name()
