@@ -901,20 +901,6 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                            "module_connection": false
-                        }
-                    ],
                     "location": [
                         {
                             "type": "variable",
@@ -928,13 +914,27 @@
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
                             "module_connection": false
                         }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
                     ]
                 }
             },
             {
-                "check_id": "CKV_AZURE_92",
+                "check_id": "CKV_AZURE_1",
                 "bc_check_id": null,
-                "check_name": "Ensure that Virtual Machines use managed disks",
+                "check_name": "Ensure Azure Instance does not use basic authentication(Use SSH Key Instead)",
                 "check_result": {
                     "result": "PASSED",
                     "evaluated_keys": []
@@ -942,7 +942,7 @@
                 "code_block": [
                     [
                         127,
-                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                        "resource \"azurerm_linux_virtual_machine\" \"vmachine-automate-test\" {\n"
                     ],
                     [
                         128,
@@ -1112,7 +1112,728 @@
                     127,
                     167
                 ],
-                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "resource": "azurerm_linux_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.AzureInstancePassword",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_178",
+                "bc_check_id": null,
+                "check_name": "Ensure linux VM enables SSH with keys for secure communication",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "admin_ssh_key/[0]/public_key"
+                    ]
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_linux_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_linux_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.LinuxVMUsesSSH",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_149",
+                "bc_check_id": null,
+                "check_name": "Ensure that Virtual machine does not enable password authentication",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "disable_password_authentication"
+                    ]
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_linux_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_linux_virtual_machine.vmachine-automate-test",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VMDisablePasswordAuthentication",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "breadcrumbs": {
+                    "name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AZURE_92",
+                "bc_check_id": null,
+                "check_name": "Ensure that Virtual Machines use managed disks",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        127,
+                        "resource \"azurerm_linux_virtual_machine\" \"vmachine-automate-test\" {\n"
+                    ],
+                    [
+                        128,
+                        "  name                = \"${var.naming}-vmachine\"\n"
+                    ],
+                    [
+                        129,
+                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
+                    ],
+                    [
+                        130,
+                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
+                    ],
+                    [
+                        131,
+                        "\n"
+                    ],
+                    [
+                        132,
+                        "  size                  = \"Standard_B1s\"\n"
+                    ],
+                    [
+                        133,
+                        "  admin_username        = \"adminuser\"\n"
+                    ],
+                    [
+                        134,
+                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
+                    ],
+                    [
+                        135,
+                        "\n"
+                    ],
+                    [
+                        136,
+                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
+                    ],
+                    [
+                        137,
+                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        138,
+                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
+                    ],
+                    [
+                        139,
+                        "\n"
+                    ],
+                    [
+                        140,
+                        "  # Public key for SSH\n"
+                    ],
+                    [
+                        141,
+                        "  /*\n"
+                    ],
+                    [
+                        142,
+                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
+                    ],
+                    [
+                        143,
+                        "  1. ssh-keygen -t rsa (precreate)\n"
+                    ],
+                    [
+                        144,
+                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
+                    ],
+                    [
+                        145,
+                        "  */\n"
+                    ],
+                    [
+                        146,
+                        "  admin_ssh_key {\n"
+                    ],
+                    [
+                        147,
+                        "    username = \"adminuser\"\n"
+                    ],
+                    [
+                        148,
+                        "    # Ensure path to public key is correct\n"
+                    ],
+                    [
+                        149,
+                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
+                    ],
+                    [
+                        150,
+                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
+                    ],
+                    [
+                        151,
+                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
+                    ],
+                    [
+                        152,
+                        "  }\n"
+                    ],
+                    [
+                        153,
+                        "\n"
+                    ],
+                    [
+                        154,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        155,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        156,
+                        "    storage_account_type = \"Premium_LRS\"\n"
+                    ],
+                    [
+                        157,
+                        "  }\n"
+                    ],
+                    [
+                        158,
+                        "\n"
+                    ],
+                    [
+                        159,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        160,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        161,
+                        "    #offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        162,
+                        "    #sku       = \"20.04-LTS\"\n"
+                    ],
+                    [
+                        163,
+                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
+                    ],
+                    [
+                        164,
+                        "    sku     = \"20_04-lts-gen2\"\n"
+                    ],
+                    [
+                        165,
+                        "    version = \"latest\"\n"
+                    ],
+                    [
+                        166,
+                        "  }\n"
+                    ],
+                    [
+                        167,
+                        "}"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
+                "repo_file_path": "/main.tf",
+                "file_line_range": [
+                    127,
+                    167
+                ],
+                "resource": "azurerm_linux_virtual_machine.vmachine-automate-test",
                 "evaluations": null,
                 "check_class": "checkov.terraform.checks.resource.azure.VMStorageOsDisk",
                 "fixed_definition": null,
@@ -1751,7 +2472,7 @@
                 "code_block": [
                     [
                         127,
-                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                        "resource \"azurerm_linux_virtual_machine\" \"vmachine-automate-test\" {\n"
                     ],
                     [
                         128,
@@ -1921,7 +2642,7 @@
                     127,
                     167
                 ],
-                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "resource": "azurerm_linux_virtual_machine.vmachine-automate-test",
                 "evaluations": null,
                 "check_class": "checkov.terraform.checks.resource.azure.AzureInstanceExtensions",
                 "fixed_definition": null,
@@ -1992,7 +2713,7 @@
                 "code_block": [
                     [
                         127,
-                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
+                        "resource \"azurerm_linux_virtual_machine\" \"vmachine-automate-test\" {\n"
                     ],
                     [
                         128,
@@ -2162,491 +2883,9 @@
                     127,
                     167
                 ],
-                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
+                "resource": "azurerm_linux_virtual_machine.vmachine-automate-test",
                 "evaluations": null,
                 "check_class": "checkov.terraform.checks.resource.azure.VMAgentIsInstalled",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "resource_address": null,
-                "severity": null,
-                "bc_category": null,
-                "benchmarks": {},
-                "description": null,
-                "short_description": null,
-                "vulnerability_details": null,
-                "connected_node": null,
-                "guideline": null,
-                "details": [],
-                "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                "breadcrumbs": {
-                    "name": [
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "resource_group_name": [
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                            "module_connection": false
-                        }
-                    ]
-                }
-            },
-            {
-                "check_id": "CKV_AZURE_177",
-                "bc_check_id": null,
-                "check_name": "Ensure Windows VM enables automatic updates",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": [
-                        "enable_automatic_updates"
-                    ]
-                },
-                "code_block": [
-                    [
-                        127,
-                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
-                    ],
-                    [
-                        128,
-                        "  name                = \"${var.naming}-vmachine\"\n"
-                    ],
-                    [
-                        129,
-                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
-                    ],
-                    [
-                        130,
-                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
-                    ],
-                    [
-                        131,
-                        "\n"
-                    ],
-                    [
-                        132,
-                        "  size                  = \"Standard_B1s\"\n"
-                    ],
-                    [
-                        133,
-                        "  admin_username        = \"adminuser\"\n"
-                    ],
-                    [
-                        134,
-                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
-                    ],
-                    [
-                        135,
-                        "\n"
-                    ],
-                    [
-                        136,
-                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
-                    ],
-                    [
-                        137,
-                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
-                    ],
-                    [
-                        138,
-                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
-                    ],
-                    [
-                        139,
-                        "\n"
-                    ],
-                    [
-                        140,
-                        "  # Public key for SSH\n"
-                    ],
-                    [
-                        141,
-                        "  /*\n"
-                    ],
-                    [
-                        142,
-                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
-                    ],
-                    [
-                        143,
-                        "  1. ssh-keygen -t rsa (precreate)\n"
-                    ],
-                    [
-                        144,
-                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
-                    ],
-                    [
-                        145,
-                        "  */\n"
-                    ],
-                    [
-                        146,
-                        "  admin_ssh_key {\n"
-                    ],
-                    [
-                        147,
-                        "    username = \"adminuser\"\n"
-                    ],
-                    [
-                        148,
-                        "    # Ensure path to public key is correct\n"
-                    ],
-                    [
-                        149,
-                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
-                    ],
-                    [
-                        150,
-                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
-                    ],
-                    [
-                        151,
-                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
-                    ],
-                    [
-                        152,
-                        "  }\n"
-                    ],
-                    [
-                        153,
-                        "\n"
-                    ],
-                    [
-                        154,
-                        "  os_disk {\n"
-                    ],
-                    [
-                        155,
-                        "    caching              = \"ReadWrite\"\n"
-                    ],
-                    [
-                        156,
-                        "    storage_account_type = \"Premium_LRS\"\n"
-                    ],
-                    [
-                        157,
-                        "  }\n"
-                    ],
-                    [
-                        158,
-                        "\n"
-                    ],
-                    [
-                        159,
-                        "  source_image_reference {\n"
-                    ],
-                    [
-                        160,
-                        "    publisher = \"Canonical\"\n"
-                    ],
-                    [
-                        161,
-                        "    #offer     = \"UbuntuServer\"\n"
-                    ],
-                    [
-                        162,
-                        "    #sku       = \"20.04-LTS\"\n"
-                    ],
-                    [
-                        163,
-                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
-                    ],
-                    [
-                        164,
-                        "    sku     = \"20_04-lts-gen2\"\n"
-                    ],
-                    [
-                        165,
-                        "    version = \"latest\"\n"
-                    ],
-                    [
-                        166,
-                        "  }\n"
-                    ],
-                    [
-                        167,
-                        "}"
-                    ]
-                ],
-                "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                "repo_file_path": "/main.tf",
-                "file_line_range": [
-                    127,
-                    167
-                ],
-                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
-                "evaluations": null,
-                "check_class": "checkov.terraform.checks.resource.azure.WinVMAutomaticUpdates",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "resource_address": null,
-                "severity": null,
-                "bc_category": null,
-                "benchmarks": {},
-                "description": null,
-                "short_description": null,
-                "vulnerability_details": null,
-                "connected_node": null,
-                "guideline": null,
-                "details": [],
-                "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                "breadcrumbs": {
-                    "name": [
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "resource_group_name": [
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                            "module_connection": false
-                        }
-                    ]
-                }
-            },
-            {
-                "check_id": "CKV_AZURE_151",
-                "bc_check_id": null,
-                "check_name": "Ensure Windows VM enables encryption",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": [
-                        "encryption_at_host_enabled"
-                    ]
-                },
-                "code_block": [
-                    [
-                        127,
-                        "resource \"azurerm_windows_virtual_machine\" \"vmachine-automate-test\" {\n"
-                    ],
-                    [
-                        128,
-                        "  name                = \"${var.naming}-vmachine\"\n"
-                    ],
-                    [
-                        129,
-                        "  resource_group_name = azurerm_resource_group.rg-automate-test.name\n"
-                    ],
-                    [
-                        130,
-                        "  location            = azurerm_resource_group.rg-automate-test.location\n"
-                    ],
-                    [
-                        131,
-                        "\n"
-                    ],
-                    [
-                        132,
-                        "  size                  = \"Standard_B1s\"\n"
-                    ],
-                    [
-                        133,
-                        "  admin_username        = \"adminuser\"\n"
-                    ],
-                    [
-                        134,
-                        "  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]\n"
-                    ],
-                    [
-                        135,
-                        "\n"
-                    ],
-                    [
-                        136,
-                        "  # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully\n"
-                    ],
-                    [
-                        137,
-                        "  //custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
-                    ],
-                    [
-                        138,
-                        "   custom_data = filebase64(\"${path.module}/scripts/lempstack.tpl\")\n"
-                    ],
-                    [
-                        139,
-                        "\n"
-                    ],
-                    [
-                        140,
-                        "  # Public key for SSH\n"
-                    ],
-                    [
-                        141,
-                        "  /*\n"
-                    ],
-                    [
-                        142,
-                        "  Options to pre-create ssh key or generate a new ssh key with terraform key gen\n"
-                    ],
-                    [
-                        143,
-                        "  1. ssh-keygen -t rsa (precreate)\n"
-                    ],
-                    [
-                        144,
-                        "  2. generate key pair every deployment and destroy every destruction (generate every deployment)\n"
-                    ],
-                    [
-                        145,
-                        "  */\n"
-                    ],
-                    [
-                        146,
-                        "  admin_ssh_key {\n"
-                    ],
-                    [
-                        147,
-                        "    username = \"adminuser\"\n"
-                    ],
-                    [
-                        148,
-                        "    # Ensure path to public key is correct\n"
-                    ],
-                    [
-                        149,
-                        "    # TODO: SCRIPTING TO LOOK FOR PUBKEY\n"
-                    ],
-                    [
-                        150,
-                        "    #public_key = file(\"~/.ssh/id_rsa.pub\") # Linux environment\n"
-                    ],
-                    [
-                        151,
-                        "    public_key = file(\"${path.module}/keys/id_rsa.pub\") # Current Windows environment\n"
-                    ],
-                    [
-                        152,
-                        "  }\n"
-                    ],
-                    [
-                        153,
-                        "\n"
-                    ],
-                    [
-                        154,
-                        "  os_disk {\n"
-                    ],
-                    [
-                        155,
-                        "    caching              = \"ReadWrite\"\n"
-                    ],
-                    [
-                        156,
-                        "    storage_account_type = \"Premium_LRS\"\n"
-                    ],
-                    [
-                        157,
-                        "  }\n"
-                    ],
-                    [
-                        158,
-                        "\n"
-                    ],
-                    [
-                        159,
-                        "  source_image_reference {\n"
-                    ],
-                    [
-                        160,
-                        "    publisher = \"Canonical\"\n"
-                    ],
-                    [
-                        161,
-                        "    #offer     = \"UbuntuServer\"\n"
-                    ],
-                    [
-                        162,
-                        "    #sku       = \"20.04-LTS\"\n"
-                    ],
-                    [
-                        163,
-                        "    offer   = \"0001-com-ubuntu-server-focal\"\n"
-                    ],
-                    [
-                        164,
-                        "    sku     = \"20_04-lts-gen2\"\n"
-                    ],
-                    [
-                        165,
-                        "    version = \"latest\"\n"
-                    ],
-                    [
-                        166,
-                        "  }\n"
-                    ],
-                    [
-                        167,
-                        "}"
-                    ]
-                ],
-                "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\main.tf",
-                "repo_file_path": "/main.tf",
-                "file_line_range": [
-                    127,
-                    167
-                ],
-                "resource": "azurerm_windows_virtual_machine.vmachine-automate-test",
-                "evaluations": null,
-                "check_class": "checkov.terraform.checks.resource.azure.WinVMEncryptionAtHost",
                 "fixed_definition": null,
                 "entity_tags": null,
                 "caller_file_path": null,
@@ -2831,10 +3070,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2845,10 +3084,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2866,8 +3105,8 @@
         "parsing_errors": []
     },
     "summary": {
-        "passed": 6,
-        "failed": 7,
+        "passed": 9,
+        "failed": 5,
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 9,

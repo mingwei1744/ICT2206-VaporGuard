@@ -111,12 +111,21 @@ def get_cve_results(search_params,config):
                                     break
                             cve_base_score = ""
                             references = cve['references']
-                            url = references[0]['url']
-                            if "cvssMetricV2" in cve["metrics"]:
-                                cve_base_score = cve["metrics"]["cvssMetricV2"][0]["cvssData"]["baseScore"]
-                            elif "cvssMetricV31" in cve["metrics"]:
-                                cve_base_score = cve["metrics"]["cvssMetricV31"][0]["cvssData"]["baseScore"]
-                            cve_results.append({"id": cve_id, "description": cve_description, "base_score": cve_base_score, "references": url})
+                            if references:
+                                url = references[0]['url']
+                                if "cvssMetricV2" in cve["metrics"]:
+                                    cve_base_score = cve["metrics"]["cvssMetricV2"][0]["cvssData"]["baseScore"]
+                                elif "cvssMetricV31" in cve["metrics"]:
+                                    cve_base_score = cve["metrics"]["cvssMetricV31"][0]["cvssData"]["baseScore"]
+                                cve_results.append({"id": cve_id, "description": cve_description, "base_score": cve_base_score, "references": url})
+                            else:
+                            # handle the case when references is empty
+                                if "cvssMetricV2" in cve["metrics"]:
+                                    cve_base_score = cve["metrics"]["cvssMetricV2"][0]["cvssData"]["baseScore"]
+                                elif "cvssMetricV31" in cve["metrics"]:
+                                    cve_base_score = cve["metrics"]["cvssMetricV31"][0]["cvssData"]["baseScore"]
+                                cve_results.append({"id": cve_id, "description": cve_description, "base_score": cve_base_score, "references": "Not Available"})
+
                     else:
                         print("No results found.")
                 except requests.exceptions.Timeout:
@@ -156,7 +165,7 @@ def main():
     config = read_config_file(config_file)
 
     # Define the search parameters
-    search_params = 'azure virtual machine'
+    search_params = 'OS version'
     # get cve results from nist search
     cve_results = get_cve_results(search_params,config)
     #print cve found

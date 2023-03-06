@@ -124,7 +124,7 @@ resource "azurerm_network_interface" "nic-automate-test" {
 }
 
 # Create Virtual Machine
-resource "azurerm_windows_virtual_machine" "vmachine-automate-test" {
+resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
   name                = "${var.naming}-vmachine"
   resource_group_name = azurerm_resource_group.rg-automate-test.name
   location            = azurerm_resource_group.rg-automate-test.location
