@@ -36,3 +36,6 @@ override.tf.json
 id_rsa
 id_ecdsa
 *.pub*
+
+#python
+__pycache__/
