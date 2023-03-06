@@ -63,6 +63,7 @@ conf = UserConfig()
 # TODO: Add a stage to generate keypair?
 # -------------------------------------------------------------------------------
 def config_init():
+    logo()
     config_resource_name()
 
 def check_valid_naming(input_str):
