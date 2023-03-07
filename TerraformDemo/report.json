@@ -499,10 +499,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -513,10 +513,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -776,10 +776,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -790,10 +790,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -901,10 +901,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -915,10 +915,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1140,10 +1140,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1154,10 +1154,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1381,10 +1381,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1395,10 +1395,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1622,10 +1622,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1636,10 +1636,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1861,10 +1861,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -1875,10 +1875,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2146,10 +2146,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2160,10 +2160,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2429,10 +2429,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2443,10 +2443,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2670,10 +2670,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2684,10 +2684,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2911,10 +2911,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -2925,10 +2925,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -3070,10 +3070,10 @@
                             "module_connection": false
                         }
                     ],
-                    "location": [
+                    "resource_group_name": [
                         {
                             "type": "variable",
-                            "name": "location",
+                            "name": "naming",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },
@@ -3084,10 +3084,10 @@
                             "module_connection": false
                         }
                     ],
-                    "resource_group_name": [
+                    "location": [
                         {
                             "type": "variable",
-                            "name": "naming",
+                            "name": "location",
                             "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\TerraformDemo\\variables.tf",
                             "module_connection": false
                         },

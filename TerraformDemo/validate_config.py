@@ -1,5 +1,5 @@
 import os
-import hcl
+from hcl import *
 import requests.exceptions
 from checkov.runner_filter import RunnerFilter
 from checkov.terraform.runner import Runner
@@ -7,6 +7,7 @@ import json
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib.pagesizes import A2, landscape
+import openai
 
 def generate_report(json_file_path, report_file_path):
     # Read in the JSON report file
@@ -14,15 +15,16 @@ def generate_report(json_file_path, report_file_path):
         report_data = json.load(f)
 
         # Create report table data
-        data = [['Check ID', 'File', 'Resource', 'Check Name', 'Guideline URL', 'Status']]
+        data = [['Check ID', 'File', 'Resource', 'Check Name', 'Line', 'Guideline URL', 'Status']]
         for check in report_data['results']['failed_checks']:
-            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'],
+            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
                          '', 'FAILED'])
+            chatgpt_request("What are the possible cve/CWE if not "+check['check_name']+" for cloud configurations")
         for check in report_data['results']['passed_checks']:
-            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'],
+            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
                          '', 'PASSED'])
         for check in report_data['results']['skipped_checks']:
-            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'],
+            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
                          '', 'SKIPPED'])
 
         # Add guideline URLs to table data
@@ -36,7 +38,7 @@ def generate_report(json_file_path, report_file_path):
                 check_id = row[0]
                 guideline_url = guidelines.get(check_id)
                 if guideline_url:
-                    row[4] = guideline_url
+                    row[5] = guideline_url
 
     # Create PDF report
     doc = SimpleDocTemplate(report_file_path, pagesize=landscape(A2))
@@ -68,7 +70,7 @@ def generate_report(json_file_path, report_file_path):
 
 def read_config_file(config_file_path):
     with open(config_file_path, 'r') as f:
-        return hcl.load(f)
+        return load(f)
 
 def check_cwe_rules(config, report_file):
     with open(report_file, 'a') as report:
@@ -155,21 +157,33 @@ def printCVEresults(cve_results,report_file):
                 print(f"References: {result['references']}")
     else:
         print("No CVEs found.")
+
+def chatgpt_request(prompt):
+    #your api key from chatgpt, not actual api key
+    openai.api_key = "uEqIcqseynihnff20oXTT3BlbkFJclLa4uGge13kpq68X8r8"
+    #prompt = "Once upon a time"
+    model = "text-davinci-002"
+    response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=2048)
+
+    generated_text = response.choices[0].text
+    print(generated_text)
+
 def main():
     # Define the path to the configuration file, to be moved to variables.tf later
     config_file = "A:/Users/JJ/Documents/GitHub/ICT2206-VapourGuard/TerraformDemo/main.tf"
     report_file = "A:/Users/JJ/Documents/GitHub/ICT2206-VapourGuard/TerraformDemo/report.txt"
 
-
-    # Read in the configuration file
+    # Read in the configuration file in hcl format
     config = read_config_file(config_file)
 
-    # Define the search parameters
-    search_params = 'OS version'
-    # get cve results from nist search
-    cve_results = get_cve_results(search_params,config)
-    #print cve found
-    printCVEresults(cve_results,report_file)
+
+
+    # # Define the search parameters
+    # search_params = 'RDP is not restricted'
+    # # get cve results from nist search
+    # cve_results = get_cve_results(search_params,config)
+    # #print cve found
+    # printCVEresults(cve_results,report_file)
     
     check_cwe_rules(config,report_file)
     # Initialize a runner filter, to do a scan using .tf
@@ -185,11 +199,11 @@ def main():
 
     json_file_path = "./report.json"
     report_file_path = "./report.pdf"
-    # Write the results to a JSON file
+    # Write the results to a JSON file for data processing/used for other modules
     with open(json_file_path, "w") as f:
         json.dump(report.get_dict(), f, indent=4)
 
-    #generate report function using reportlab lib
+    #generate report function using reportlab lib, by reading json
     generate_report(json_file_path, report_file_path)
 
 main()
