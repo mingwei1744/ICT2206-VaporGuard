@@ -17,6 +17,7 @@ data "template_file" "script_lemp_config" {
 
   vars = {
     rootUser    = "${var.admin-user}"
+    webUser     = "${var.web-user}"
     databasePwd = "${var.database-pwd}"
     domainName  = "${var.website-dns}"
   }
@@ -30,6 +31,11 @@ data "template_file" "script_web_config" {
     domainName   = "${var.website-dns}"
     emailAddress = "${var.email}"
   }
+}
+
+data "template_file" "script_php_xfer" {
+  template = file("${path.module}/scripts/config_php_xfer.tpl")
+
 }
 
 # Consolidate into cloudinit config in sequence
@@ -52,5 +58,11 @@ data "template_cloudinit_config" "configs" {
   part {
     content_type = "text/x-shellscript"
     content      = data.template_file.script_web_config.rendered
+  }
+
+  # then Part 4 (Transferring PHP files to html document root)
+  part {
+    content_type = "text/x-shellscript"
+    content      = data.template_file.script_php_xfer.rendered
   }
 }

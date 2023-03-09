@@ -135,7 +135,7 @@ def config_root_user():
         config_root_user()
 
 # Function to get VM web username
-# TODO: Change to YES/NO create seperate user for web administrator? If NO, flag to report
+# F: Change to YES/NO create seperate user for web administrator? If NO, flag to report
 def config_web_user():
     vm_web_user = input(colored(
         "4. Enter web admin username for Virtual Machine: ", "blue", attrs=['bold']))
@@ -283,7 +283,7 @@ def create_tfvars():
 
     # Next
     print(colored("Commencing Terraform deployment...", "green", attrs=["bold"]))
-    #tf_init()
+    tf_init()
 
 # -------------------------------------------------------------------------------
 # Terraform Deployment
@@ -343,6 +343,7 @@ def tf_init():
             tf_apply = terraform_apply()
 
             if tf_apply == success:
+                print(colored("Please proceed to your domain name provider for domain name binding", "green", attrs=["bold"]))
                 print(colored("Checking for deployment status...", "grey", attrs=["bold"]))
                 os.chdir("../")
                 time.sleep(10)
@@ -412,6 +413,6 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         warningPrint("\nExiting configuration...")
-        os.chdir(os.getcwd() + f"/{terraformDir}")
-        os.remove("userconfig.auto.tfvars")
+        #os.chdir(os.getcwd() + f"/{terraformDir}")
+        #os.remove("userconfig.auto.tfvars")
         sys.exit()
