@@ -1,4 +1,6 @@
 import os
+import textwrap
+import re
 from hcl import *
 import requests.exceptions
 from checkov.runner_filter import RunnerFilter
@@ -6,46 +8,55 @@ from checkov.terraform.runner import Runner
 import json
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.lib.pagesizes import A2, landscape
+from reportlab.lib.pagesizes import A1, landscape
 import openai
+import time
 
+#global request time
+last_request_time = 0
+min_time_between_requests = 1.0  # minimum time in seconds between requests
 def generate_report(json_file_path, report_file_path):
     # Read in the JSON report file
     with open(json_file_path, 'r') as f:
         report_data = json.load(f)
-
-        # Create report table data
-        data = [['Check ID', 'File', 'Resource', 'Check Name', 'Line', 'Guideline URL', 'Status']]
-        for check in report_data['results']['failed_checks']:
-            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
-                         '', 'FAILED'])
-            chatgpt_request("What are the possible cve/CWE if not "+check['check_name']+" for cloud configurations")
-        for check in report_data['results']['passed_checks']:
-            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
-                         '', 'PASSED'])
-        for check in report_data['results']['skipped_checks']:
-            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
-                         '', 'SKIPPED'])
-
-        # Add guideline URLs to table data
+        # Get guideline URLs
         url = "https://www.bridgecrew.cloud/api/v2/guidelines"
         headers = {"accept": "application/json"}
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             response_data = response.json()
             guidelines = response_data.get("guidelines", {})
-            for row in data[1:]:
-                check_id = row[0]
-                guideline_url = guidelines.get(check_id)
-                if guideline_url:
-                    row[5] = guideline_url
+        else:
+            guidelines = {}
+
+        # Create report table data
+        data = [['Check ID', 'File', 'Resource', 'Check Name', 'Line', 'Possible CVE/CWE', 'Guideline URL', 'Status']]
+        for check in report_data['results']['failed_checks']:
+            cwe_cve = ''
+            guideline_url = guidelines.get(check['check_id'], '')
+            if guideline_url:
+                response = chatgpt_request("Based on " + check['check_name'] + " and "+ check['resource']+ " given, what are 3 top possible cve/cwe if this is not ensured, shorten and return CVE/CWE results in 1. CVE/CWE 2. CVE/CWE 3. CVE/CWE with short description")
+                cwe_cve = re.sub(r"\ format", "",("\n".join(textwrap.wrap(response.replace(", ", "\n"), width=100)))).strip()
+                cwe_cve = re.sub(r'^[.:]\s*', '', cwe_cve) # remove '.: at the start of the string'
+            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
+                         cwe_cve, guideline_url, 'FAILED'])
+
+        for check in report_data['results']['passed_checks']:
+            cwe_cve = ''
+            guideline_url = guidelines.get(check['check_id'], '')
+            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
+                         cwe_cve, guideline_url, 'PASSED'])
+        for check in report_data['results']['skipped_checks']:
+            cwe_cve = ''
+            guideline_url = guidelines.get(check['check_id'], '')
+            data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
+                         cwe_cve, guideline_url, 'SKIPPED'])
 
     # Create PDF report
-    doc = SimpleDocTemplate(report_file_path, pagesize=landscape(A2))
-    table = Table(data)
+    doc = SimpleDocTemplate(report_file_path, pagesize=landscape(A1))
 
     # Set the table style
-    table.setStyle(TableStyle([
+    table_style = [
         ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
         ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
@@ -53,8 +64,9 @@ def generate_report(json_file_path, report_file_path):
         ('FONTSIZE', (0, 0), (-1, 0), 14),
         ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
         ('GRID', (0, 0), (-1, -1), 1, colors.black),
-    ]))
+    ]
 
+    table = Table(data)
     # Change the font color of the "Status" column based on row value
     for i in range(1, len(data)):
         if data[i][-1] == 'PASSED':
@@ -63,142 +75,52 @@ def generate_report(json_file_path, report_file_path):
             status_color = colors.red
         else:
             status_color = colors.black
-        table.setStyle(TableStyle([
-            ('TEXTCOLOR', (-1, i), (-1, i), status_color),
-        ]))
+        table_style.append(('TEXTCOLOR', (-1, i), (-1, i), status_color))
+
+    table.setStyle(TableStyle(table_style))
     doc.build([table])
 
 def read_config_file(config_file_path):
     with open(config_file_path, 'r') as f:
         return load(f)
 
-def check_cwe_rules(config, report_file):
-    with open(report_file, 'a') as report:
-        if 'security_rule' in config['resource']['azurerm_network_security_group']['sg-automate-test']:
-            for rule in config['resource']['azurerm_network_security_group']['sg-automate-test']['security_rule']:
-                if rule['name'] == 'sshd' and rule['destination_port_range'] == '22':
-                    report.write(f"WARNING: Security rule {rule['name']} is using default SSH port\n")
-                if 'source_address_prefix' not in rule:
-                    report.write(f"WARNING: Security rule {rule['name']} allows traffic from all sources\n")
-                if 'destination_address_prefix' not in rule:
-                    report.write(f"WARNING: Security rule {rule['name']} allows traffic to all destinations\n")
-
-def get_cve_results(search_params,config):
-    base_url = "https://services.nvd.nist.gov/rest/json/cves/2.0"
-    cve_results = []
-
-    for resource_type, resources in config["resource"].items():
-        for resource_name, resource in resources.items():
-            # Check if the resource is a virtual machine, can later change to resource type as search params
-            if resource_type == "azurerm_linux_virtual_machine" or resource_type == "azurerm_windows_virtual_machine":
-                #     resource_type.strip()
-                #     resource_type = re.sub(r"_", " ", resource_type)
-                #     search_params = resource_type
-                try:
-                    # Make the API call
-                    response = requests.get(f"{base_url}?keywordSearch={search_params}")
-                    # Parse the JSON response
-                    data = response.json()
-                    # Check if any results were found
-                    # Process the data as needed and append it to cve_results
-                    if data["totalResults"] > 0:
-                        for cve_item in data["vulnerabilities"]:
-                            cve = cve_item["cve"]
-                            cve_id = cve["id"]
-                            cve_description = ""
-
-                            for description in cve["descriptions"]:
-                                if description["lang"] == "en":
-                                    cve_description = description["value"]
-                                    break
-                            cve_base_score = ""
-                            references = cve['references']
-                            if references:
-                                url = references[0]['url']
-                                if "cvssMetricV2" in cve["metrics"]:
-                                    cve_base_score = cve["metrics"]["cvssMetricV2"][0]["cvssData"]["baseScore"]
-                                elif "cvssMetricV31" in cve["metrics"]:
-                                    cve_base_score = cve["metrics"]["cvssMetricV31"][0]["cvssData"]["baseScore"]
-                                cve_results.append({"id": cve_id, "description": cve_description, "base_score": cve_base_score, "references": url})
-                            else:
-                            # handle the case when references is empty
-                                if "cvssMetricV2" in cve["metrics"]:
-                                    cve_base_score = cve["metrics"]["cvssMetricV2"][0]["cvssData"]["baseScore"]
-                                elif "cvssMetricV31" in cve["metrics"]:
-                                    cve_base_score = cve["metrics"]["cvssMetricV31"][0]["cvssData"]["baseScore"]
-                                cve_results.append({"id": cve_id, "description": cve_description, "base_score": cve_base_score, "references": "Not Available"})
-
-                    else:
-                        print("No results found.")
-                except requests.exceptions.Timeout:
-                    # Handle the timeout exception here
-                    print("The request timed out.")
-                except requests.exceptions.HTTPError as e:
-                    # Handle HTTP errors here
-                    print(f"HTTP error occurred: {e}")
-                except requests.exceptions.RequestException as e:
-                    # Handle other exceptions here
-                    print(f"Too many request error occurred: {e}")
-
-    return cve_results
-def printCVEresults(cve_results,report_file):
-    # Print and write the CVE results
-    if cve_results:
-        with open(report_file, 'a') as report:
-            report.write(f"Found {len(cve_results)} CVEs:\n")
-            for result in cve_results:
-                report.write(f"CVE ID: {result['id']}\n")
-                report.write(f"Description: {result['description']}\n")
-                report.write(f"Base Score: {result['base_score']}\n")
-                report.write(f"References: {result['references']}\n")
-                print(f"CVE ID: {result['id']}")
-                print(f"Description: {result['description']}")
-                print(f"Base Score: {result['base_score']}")
-                print(f"References: {result['references']}")
-    else:
-        print("No CVEs found.")
-
 def chatgpt_request(prompt):
-    #your api key from chatgpt, not actual api key
-    openai.api_key = "uEqIcqseynihnff20oXTT3BlbkFJclLa4uGge13kpq68X8r8"
-    #prompt = "Once upon a time"
-    model = "text-davinci-002"
-    response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=2048)
 
+    global last_request_time
+    global min_time_between_requests
+    # Wait until enough time has elapsed since the last request
+    elapsed_time = time.time() - last_request_time
+    if elapsed_time < min_time_between_requests:
+        time.sleep(min_time_between_requests - elapsed_time)
+    # Update the last request time
+
+
+    # Make the API request
+    openai.api_key = "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"
+    model = "text-davinci-003"
+    response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=500)
     generated_text = response.choices[0].text
-    print(generated_text)
+    results = re.sub(r'(?<=\d\.)', '', generated_text)
+
+    last_request_time = time.time()
+    print(results)
+    return results
 
 def main():
-    # Define the path to the configuration file, to be moved to variables.tf later
-    config_file = "A:/Users/JJ/Documents/GitHub/ICT2206-VapourGuard/TerraformDemo/main.tf"
-    report_file = "A:/Users/JJ/Documents/GitHub/ICT2206-VapourGuard/TerraformDemo/report.txt"
 
-    # Read in the configuration file in hcl format
-    config = read_config_file(config_file)
-
-
-
-    # # Define the search parameters
-    # search_params = 'RDP is not restricted'
-    # # get cve results from nist search
-    # cve_results = get_cve_results(search_params,config)
-    # #print cve found
-    # printCVEresults(cve_results,report_file)
-    
-    check_cwe_rules(config,report_file)
-    # Initialize a runner filter, to do a scan using .tf
+    # Initialize a runner filter, to do a scan on config based on terraform framework
     runner_filter = RunnerFilter(framework=["terraform"], include_all_checkov_policies=True)
     # Initialize a runner
     runner = Runner()
-    # Load external checks from current directory
+    # Load external checks from current directory, includes main.tf,outputs,prodivers and etc
     external_checks_dir = "."
     external_checks = [f"{external_checks_dir}/{f}" for f in os.listdir(external_checks_dir) if f.endswith(".tf")]
     runner.load_external_checks(external_checks)
-    # Scan the file and get the results - checkov
-    report = runner.run(root_folder="A:/Users/JJ/Documents/GitHub/ICT2206-VapourGuard/TerraformDemo", runner_filter=runner_filter)
-
-    json_file_path = "./report.json"
-    report_file_path = "./report.pdf"
+    # Scan folders & sub folders recursively for .tf files and get the results - checkov
+    report = runner.run(root_folder=".", runner_filter=runner_filter)
+    # location of report.json and pdf would be created
+    json_file_path = "./report/report.json"
+    report_file_path = "./report/report.pdf"
     # Write the results to a JSON file for data processing/used for other modules
     with open(json_file_path, "w") as f:
         json.dump(report.get_dict(), f, indent=4)
@@ -206,5 +128,14 @@ def main():
     #generate report function using reportlab lib, by reading json
     generate_report(json_file_path, report_file_path)
 
+    # Loop through the list of file paths and process each file
+    for file_path in external_checks:
+        if os.path.basename(file_path) == "main.tf":
+            # Read in the configuration file in hcl format
+            config = read_config_file(file_path)
+            #if .tf has no key pair
+            if not bool(config):
+                continue
+    #Do something to the particular .tf file
 main()
 
