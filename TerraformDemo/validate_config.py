@@ -35,7 +35,7 @@ def generate_report(json_file_path, report_file_path):
             cwe_cve = ''
             guideline_url = guidelines.get(check['check_id'], '')
             if guideline_url:
-                response = chatgpt_request("Based on " + check['check_name'] + " and "+ check['resource']+ " given, what are 3 top possible cve/cwe if this is not ensured, shorten and return CVE/CWE results in 1. CVE/CWE 2. CVE/CWE 3. CVE/CWE with short description")
+                response = chatgpt_request("Based on " + check['check_name'] + " and "+ check['resource']+ " given, what are 1-3 possible cve/cwe if this is not ensured, shorten and return CVE/CWE results in 1. CVE/CWE 2. CVE/CWE 3. CVE/CWE with short description")
                 cwe_cve = re.sub(r"\ format", "",("\n".join(textwrap.wrap(response.replace(", ", "\n"), width=100)))).strip()
                 cwe_cve = re.sub(r'^[.:]\s*', '', cwe_cve) # remove '.: at the start of the string'
             data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
@@ -128,7 +128,7 @@ def main():
     #generate report function using reportlab lib, by reading json
     generate_report(json_file_path, report_file_path)
 
-    # Loop through the list of file paths and process each file
+    # Loop through the list of file paths and process each file manually
     for file_path in external_checks:
         if os.path.basename(file_path) == "main.tf":
             # Read in the configuration file in hcl format
