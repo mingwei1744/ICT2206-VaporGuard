@@ -25,6 +25,7 @@ def generate_report(json_file_path, report_file_path):
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             response_data = response.json()
+            #get guidelines based on check_id
             guidelines = response_data.get("guidelines", {})
         else:
             guidelines = {}
@@ -36,8 +37,14 @@ def generate_report(json_file_path, report_file_path):
             guideline_url = guidelines.get(check['check_id'], '')
             if guideline_url:
                 response = chatgpt_request("Based on " + check['check_name'] + " and "+ check['resource']+ " given, what are 1-3 possible cve/cwe if this is not ensured, shorten and return CVE/CWE results in 1. CVE/CWE 2. CVE/CWE 3. CVE/CWE with short description")
-                cwe_cve = re.sub(r"\ format", "",("\n".join(textwrap.wrap(response.replace(", ", "\n"), width=100)))).strip()
-                cwe_cve = re.sub(r'^[.:]\s*', '', cwe_cve) # remove '.: at the start of the string'
+                cwe_cve = re.sub(r"\ format", "", ("\n".join(textwrap.wrap(response.replace(", ", "\n"), width=100))))
+                cwe_cve = re.sub(r'(?<!\n)\s*\n\s*', ' ', cwe_cve)  # remove line breaks that are not at the start of a line
+                cwe_cve = re.sub(r'\n\s*', r'\n', cwe_cve)  # remove whitespace characters after newlines
+                cwe_cve = re.sub(r'\n+', r'\n', cwe_cve).strip()  # remove duplicate newlines
+                cwe_cve = re.sub(r'^\n', '', cwe_cve).strip()  # remove leading newline if present
+                cwe_cve = re.sub(r'(\d+\.)\s*', r'\1 ', cwe_cve).strip()  # insert a space after the numbers
+                cwe_cve = re.sub(r'(\d+\.)', r'\n\1', cwe_cve).strip()  # insert newlines before the numbers
+
             data.append([check['check_id'], check['file_path'], check['resource'], check['check_name'], '-'.join(str(x) for x in check['file_line_range']),
                          cwe_cve, guideline_url, 'FAILED'])
 
@@ -98,13 +105,13 @@ def chatgpt_request(prompt):
     # Make the API request
     openai.api_key = "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"
     model = "text-davinci-003"
-    response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=500)
+    #When the temperature is set to a low value, the model will tend to produce more conservative or predictable responses
+    temperature = 0.2
+    response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=500,  temperature=temperature)
     generated_text = response.choices[0].text
-    results = re.sub(r'(?<=\d\.)', '', generated_text)
-
     last_request_time = time.time()
-    print(results)
-    return results
+    #print(generated_text)
+    return generated_text
 
 def main():
 
