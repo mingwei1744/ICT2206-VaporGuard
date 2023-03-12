@@ -164,4 +164,21 @@ resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
     sku     = "20_04-lts-gen2"
     version = "latest"
   }
+
+  // Testing provisioner for PHP file upload
+  connection {
+    host        = self.public_ip_address
+    user        = var.admin-user
+    type        = "ssh"
+    private_key = file("${path.module}/keys/id_rsa")
+    timeout     = "4m"
+    agent       = false
+  }
+
+  provisioner "file" {
+    source = "${path.module}/php/"
+    #destination = "/home/${var.admin-user}/php/"
+    destination = "/tmp"
+
+  }
 }

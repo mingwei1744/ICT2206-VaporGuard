@@ -1,0 +1,303 @@
+{
+    "phpVulnerabilities": [
+      {
+        "id": "A01.1",
+        "name": "PHP info",
+        "pattern-match": "phpinfo",
+        "pattern-include": "\\(S?\\)",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "The 'phpinfo' function may reveal sensitive information about your environment.",
+        "severity": "Medium",
+        "owasp": "A01:2021 - Broken Access Control",
+        "cwe": "",
+        "fix": ""
+      },
+  
+      {
+        "id": "A01.2",
+        "name": "Broken Access Control",
+        "pattern-match": "header",
+        "pattern-include": "\\(\\s*(\"|')\\s*(l|L)ocation:\\s*\\S?\\s*\\.?\\s*(https?://\\S+|\\$[\\x00-\\x7F]+)(\"|')?\\s*\\)",
+        "pattern-exclude": "\\(\\s*(\"|')\\s*(l|L)ocation:\\s*\\S?\\s*\\.?\\s*(\\$_SERVER\\['PHP_SELF']|\\$BASE_URL.\\$_SERVER\\['REQUEST_URI'\\]|\\$SERVER\\['HTTP_HOST'\\].\\$_SERVER\\['REQUEST_URI'\\])(\"|')?\\s*\\)",
+        "message": " Redirecting to the current request URL may redirect to another domain, if the current path starts with two slashes.",
+        "severity": "Low",
+        "owasp": "A01:2021 - Broken Access Control",
+        "cwe": "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A01.3",
+        "name": "Broken Access Control",
+        "pattern-match": "unlink",
+        "pattern-include": "\\$",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Using user input when deleting files with `unlink()` is potentially dangerous. A malicious actor could use this to modify or access files they have no right to.",
+        "severity": "Medium",
+        "owasp": "A01:2021 - Broken Access Control",
+        "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A02.1",
+        "name": "Weak cryptography function",
+        "pattern-match": "(crypt|md5|md5_file|sha1|sha1_file|str_rot13)",
+        "pattern-include": "\\(\\s*(\"|')[\\x00-\\x7F]+(\"|')\\s*\\)",
+        "pattern-exclude": "sodium",
+        "message": "Detected usage of weak crypto function. Consider using stronger alternatives",
+        "severity": "Low",
+        "owasp": "A02:2021 - Cryptographic Failures",
+        "cwe": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+        "fix": "Consider using stronger alternatives such as sodium"
+      },
+  
+      {
+        "id": "A02.2",
+        "name": "Weak hash algorithm",
+        "pattern-match": "(hash|md4|md5)",
+        "pattern-include": "\\(\\S*[\\x00-\\x7F]+\\S*\\)",
+        "pattern-exclude": "(sha256|sha512|scrypt)",
+        "message": "It looks like MD5 is used as a password hash. MD5 is not considered a secure password hash because it can be cracked by an attacker in a short amount of time.\nUse a suitable password hashing function such as scrypt that is RAM-limited.\nYou can use `password_hash($PASSWORD, PASSWORD_BCRYPT, $OPTIONS);`",
+        "severity": "Medium",
+        "owasp": "A02:2021 - Cryptographic Failures",
+        "cwe": "CWE-328: Use of Weak Hash",
+        "fix": "Consider using password_hash() function for password"
+      },
+  
+      {
+        "id": "A02.3",
+        "name": "Curl SSL verifypeer off",
+        "pattern-match": "curl_setopt",
+        "pattern-include": "\\([\\x00-\\x7F]+,\\s*CURLOPT_SSL_VERIFYPEER,\\s*(false|0|null)\\)",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "SSL verification is disabled but should not be (currently CURLOPT_SSL_VERIFYPEER=$IS_VERIFIED)",
+        "severity": "Low",
+        "owasp": "A02:2021 - Cryptographic Failures",
+        "cwe": "CWE-319: Cleartext Transmission of Sensitive Information",
+        "fix": ""
+      },
+  
+      {
+        "id": "A02.4",
+        "name": "FTP use",
+        "pattern-match": "(ftp_connect|ftp_login)",
+        "pattern-include": "\\([\\x00-\\x7F]+\\)",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "FTP allows for unencrypted file transfers. Consider using an encrypted alternative.",
+        "severity": "Medium",
+        "owasp": "A02:2021 - Cryptographic Failures",
+        "cwe": "CWE-319: Cleartext Transmission of Sensitive Information",
+        "fix": "Consider using ssh2_scp_send()"
+      },
+  
+      {
+        "id": "A02.5",
+        "name": "Static IV use in AES-CBC mode",
+        "pattern-match": "(openssl_encrypt|openssl_decrypt)",
+        "pattern-include": "\\([\\x00-\\x7F]+\\s*,\\s*[\\x00-\\x7F]+\\s*,\\s*[\\x00-\\x7F]+\\s*,\\s*[\\x00-\\x7F]+\\s*\\)",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Static IV used with AES in CBC mode.  Static IVs enable chosen-plaintext attacks against encrypted data",
+        "severity": "Medium",
+        "owasp": "A02:2021 - Cryptographic Failures",
+        "cwe": "CWE-329: Generation of Predictable IV with CBC Mode",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.1",
+        "name": "Local File Inclusion",
+        "pattern-match": "(include|include_once|require|require_once)",
+        "pattern-include": "\\$\\S*[\\x00-\\x7F]+\\S*",
+        "pattern-exclude": "include_safe",
+        "message": "Detected non-constant file inclusion. This can lead to local file inclusion (LFI) or remote file inclusion (RFI) if user input reaches this statement.\nLFI and RFI could lead to sensitive files being obtained by attackers.\nInstead, explicitly specify what to include. If that is not a viable solution, validate user input thoroughly.",
+        "severity": "Medium",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-98: Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.2",
+        "name": "Remote File Inclusion",
+        "pattern-match": "(include|include_once|require|require_once)",
+        "pattern-include": "\\(\\$_GET|\\$_POST|\\$_COOKIE|\\$_REQUEST|\\$_SERVER\\S*[\\x00-\\x7F]+\\S*",
+        "pattern-exclude": "include_safe",
+        "message": "Detected non-constant file inclusion. This can lead to local file inclusion (LFI) or remote file inclusion (RFI) if user input reaches this statement.\nLFI and RFI could lead to sensitive files being obtained by attackers.\nInstead, explicitly specify what to include. If that is not a viable solution, validate user input thoroughly.",
+        "severity": "Medium",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-98: Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.3",
+        "name": "Remote Code Execution",
+        "pattern-match": "(exec|passthru|proc_open|popen|shell_exec|system|pcntl_exec)",
+        "pattern-include": "\\$\\S*[\\x00-\\x7F]+\\S*",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Executing non-constant commands. This can lead to command injection.",
+        "severity": "High",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.4",
+        "name": "'assert' use",
+        "pattern-match": "assert",
+        "pattern-include": "\\$",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Calling assert with user input is equivalent to eval'ing.",
+        "severity": "Medium",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.5",
+        "name": "'eval' use",
+        "pattern-match": "eval",
+        "pattern-include": "\\$",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Evaluating non-constant commands. This can lead to command injection.",
+        "severity": "High",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.6",
+        "name": "'mb-ereg-replace' use",
+        "pattern-match": "mb_ereg_replace",
+        "pattern-include": "\\(\\$[\\w-]+,\\s*\\$[\\w-]+,\\s*\\$[\\w-]+,\\s*\\$[\\x00-\\x7F]+\\)",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Calling mb_ereg_replace with user input in the options can lead to arbitrary code execution. The eval modifier (`e`) evaluates the replacement argument as code.",
+        "severity": "Medium",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.7",
+        "name": "Non-Literal Header",
+        "pattern-match": "header",
+        "pattern-include": "\\(\\s*(\"|')\\S+:\\s*\\S?\\s*\\.?\\s*\\$[\\w-]+\\S?\\s*\\)",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Using user input when setting headers with `header()` is potentially dangerous.\nThis could allow an attacker to inject a new line and add a new header into the response.",
+        "severity": "Low",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A03.8",
+        "name": "Backticks use",
+        "pattern-match": "`",
+        "pattern-include": "[\\x00-\\x7F]+`",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Backticks use may lead to command injection vulnerabilities.",
+        "severity": "High",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "fix": ""
+      },
+  
+      {
+        "id": "A07.1",
+        "name": "LDAP bind without password",
+        "pattern-match": "ldap_bind",
+        "pattern-include": "\\([\\x00-\\x7F]+\\s*,\\s*[\\x00-\\x7F]+\\s*,\\s*([\\x00-\\x7F]+|NULL|\"\\s*\")?",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Detected anonymous LDAP bind. This permits anonymous users to execute LDAP statements.",
+        "severity": "Low",
+        "owasp": "A07:2021 - Identification and Authentication Failures",
+        "cwe": "CWE-287: Improper Authentication",
+        "fix": "Consider enforcing authentication for LDAP."
+      },
+  
+      {
+        "id": "A07.2",
+        "name": "PHP permissive cors",
+        "pattern-match": "(H|h)eader\\s*\\((\"|')(A|a)ccess-(C|c)ontrol-(A|a)llow-(O|o)rigin:\\s*",
+        "pattern-include": "[\\*\\s*(\"|')$\\)]",
+        "pattern-exclude": "(H|h)eader\\((\"|')(A|a)ccess-(C|c)ontrol-(A|a)llow-(O|o)rigin:\\s*\\*[\\x00-\\x7F]+\\*\"\\)",
+        "message": " Access-Control-Allow-Origin response header is set to \"*\". This will disable CORS Same Origin Policy restrictions.",
+        "severity": "Low",
+        "owasp": "A07:2021 - Identification and Authentication Failures",
+        "cwe": "CWE-346: Origin Validation Error",
+        "fix": ""
+      },
+  
+      {
+        "id": "A08.1",
+        "name": "'extract' use",
+        "pattern-match": "extract",
+        "pattern-include": "\\$",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Do not call 'extract()' on user-controllable data.",
+        "severity": "Medium",
+        "owasp": "A08:2021 - Software and Data Integrity Failures",
+        "cwe": "CWE-502: Deserialization of Untrusted Data",
+        "fix": "Provide the EXTR_SKIP flag extract($VAR, EXTR_SKIP,...) to prevent overwriting existing variables."
+      },
+  
+      {
+        "id": "A08.2",
+        "name": "'unserialize' use",
+        "pattern-match": "unserialize\\s*",
+        "pattern-include": "\\(\\s*\\$",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Calling `unserialize()` with user input in the pattern can lead to arbitrary code execution",
+        "severity": "Low",
+        "owasp": "A08:2021 - Software and Data Integrity Failures",
+        "cwe": "CWE-502: Deserialization of Untrusted Data",
+        "fix": "Consider using JSON or structured data approaches (e.g. Google Protocol Buffers)."
+      },
+  
+      {
+        "id": "A10.1",
+        "name": "Server-Side Request Forgery (SSRF)",
+        "pattern-match": "(curl_setopt|fopen|file_get_contents|curl_init|readfile)",
+        "pattern-include": "\\s*",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "The web server receives a URL or similar request from an upstream component and retrieves the contents of this URL,\nbut it does not sufficiently ensure that the request is being sent to the expected destination.",
+        "severity": "High",
+        "owasp": "A10:2021 - Server-Side Request Forgery (SSRF)",
+        "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "fix": ""
+      },
+  
+      {
+        "id": "OVN.1",
+        "name": "Strict Hash Comparison",
+        "pattern-match": "(hash|md2|md4|md5|sha1|sha256|sha512|ripemd128|ripemd160|ripemd256|ripemd320|whirlpool|tiger128|tiger160|tiger192|snefru|gost|adler32|crc32|haval)",
+        "pattern-include": "\\s*(?<!\\=)\\=\\=(?!\\=)",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Make sure comparisons involving hash values are strict.",
+        "severity": "Low",
+        "owasp": "",
+        "cwe": "CWE-697: Incorrect Comparison",
+        "fix": "(use `===` not `==`)"
+      },
+  
+      {
+        "id": "OVN.2",
+        "name": "Basic Authentication use",
+        "pattern-match": "(\\$_SERVER\\[(\"|')PHP_AUTH_USER(\"|')\\]|\\$_SERVER\\[(\"|')PHP_AUTH_PW(\"|')\\]|header\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Basic realm\\s*=)",
+        "pattern-include": "(\\$_SERVER\\[(\"|')PHP_AUTH_USER(\"|')\\]|\\$_SERVER\\[(\"|')PHP_AUTH_PW(\"|')\\]|header\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Basic realm\\s*=)",
+        "pattern-exclude": "(\\$_SERVER\\[(\"|')PHP_AUTH_DIGEST(\"|')\\]|header\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Digest realm\\s*=)",
+        "message": "HTTP basic authentication in use. Credentials are stored in Base64-encoded string. Consider using stronger alternatives.",
+        "severity": "Medium",
+        "owasp": "",
+        "cwe": "",
+        "fix": "Consider using HTTP Digest authentication."
+      }
+  
+    ]
+  }

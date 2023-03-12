@@ -2,6 +2,7 @@
 # Script2. LEMPstack configurations
 
 root="${rootUser}"
+webadm="${webUser}"
 database_pwd="${databasePwd}"
 domain="${domainName}"
 
@@ -96,17 +97,19 @@ sudo ln -s /etc/nginx/sites-available/$domain /etc/nginx/sites-enabled/
 sudo unlink /etc/nginx/sites-enabled/default
 sudo systemctl restart nginx
 
-sudo chown -R adminuser:adminuser /var/www/html
+#sudo chown -R adminuser:adminuser /var/www/html
+sudo chown -R $webadm:$webadm /var/www/html
 sudo chmod 2775 /var/www/html
 
-sudo echo "
-<!DOCTYPE html>
-<html>
-        <body style='background-color:red'>
-                <h1 style='text-align:center'> ICT2206 CLOUD-INIT AUTOMATION TEST <h1>
+# Moved to user defined php code
+# sudo echo "
+# <!DOCTYPE html>
+# <html>
+#         <body style='background-color:red'>
+#                 <h1 style='text-align:center'> ICT2206 CLOUD-INIT AUTOMATION TEST <h1>
 
-                <?php echo \"<h3 style='text-align:center'> PHP interpreter successfully installed </h3>\"; ?>
-        </body>
-</html>" > /var/www/html/index.php
+#                 <?php echo \"<h3 style='text-align:center'> PHP interpreter successfully installed </h3>\"; ?>
+#         </body>
+# </html>" > /var/www/html/index.php
 
 echo "$timestamp Installed PHP" >> $log
