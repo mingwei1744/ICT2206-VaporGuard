@@ -31,7 +31,7 @@ def generate_report(json_file_path, report_file_path):
             guidelines = {}
 
         # Create report table data
-        data = [['Check ID', 'File', 'Resource', 'Check Name', 'Line', 'Possible CVE/CWE', 'Guideline URL', 'Status']]
+        data = [['Check ID', 'File', 'Resource', 'Check Name', 'Line', 'Potential CVE/CWE', 'Guideline URL', 'Status']]
         for check in report_data['results']['failed_checks']:
             cwe_cve = ''
             guideline_url = guidelines.get(check['check_id'], '')
@@ -99,9 +99,6 @@ def chatgpt_request(prompt):
     elapsed_time = time.time() - last_request_time
     if elapsed_time < min_time_between_requests:
         time.sleep(min_time_between_requests - elapsed_time)
-    # Update the last request time
-
-
     # Make the API request
     openai.api_key = "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"
     model = "text-davinci-003"
@@ -109,6 +106,7 @@ def chatgpt_request(prompt):
     temperature = 0.2
     response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=500,  temperature=temperature)
     generated_text = response.choices[0].text
+    # Update the last request time
     last_request_time = time.time()
     #print(generated_text)
     return generated_text
