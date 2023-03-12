@@ -9,7 +9,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 
 # PHP rules stated in json format
-with open('php_rules.json') as f:
+with open('./configpackage/php_rules.json') as f:
     data = json.load(f)
 
 # Function to get specific key-value from all rules
@@ -208,7 +208,7 @@ if __name__ == "__main__":
     get_rule_values("id", vuln_ids_arr)
 
     # Get all php files
-    php_files_dir = "./vulns/" # Specify directory with php file TODO: Get vuln php codes
+    php_files_dir = "./TerraformDemo/php/" # Specify directory with php file TODO: Get vuln php codes
     php_files_arr = []
     get_php_files(php_files_dir, php_files_arr)
 
