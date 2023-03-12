@@ -20,38 +20,38 @@ az login
 ![azlogin](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/azlogin.png)
 
 ## Deployment
-a) Generate a key in the /TerraformDemo/keys directory (Mimicking Lab steps)
+a) Generate a key in the /Terraform/keys directory (Mimicking Lab steps)
 > *Do not commit the keys to the Github repo! 
 ```
-cd /TerraformDemo/keys
+cd /Terraform/keys
 ssh-keygen -t ecdsa -b 521
 ```
 ![keypair](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/keypair.png)
 
-b) Edit your FQ domain name in /TerraformDemo/variables.tf
+b) Edit your FQ domain name in /Terraform/variables.tf
 > E.g., www.my-domain.com ; Remember to bind your domain name in Porkbun after deployment
 
 c) Initialize a working directory containing Terraform configuration files.
-> From the main working directory /TerraformDemo run terraform init
+> From the main working directory /Terraform run terraform init
 ```
 terraform init
 ```
 
 d) Preview execution plan
-> From the main working directory /TerraformDemo run terraform plan.
+> From the main working directory /Terraform run terraform plan.
 ```
 terraform plan
 ```
 
 e) Start deployment
-> From the main working directory /TerraformDemo run terraform apply.
+> From the main working directory /Terraform run terraform apply.
 ```
 terraform apply
 ```
 
 ## Teardown
 a) To remove all objects deployed
-> From the main working directory /TerraformDemo run terraform destroy
+> From the main working directory /Terraform run terraform destroy
 ```
 terraform destroy
 ```

@@ -6,7 +6,7 @@ import requests
 from termcolor import colored
 from configpackage.configclass import UserConfig
 
-terraformDir = "TerraformDemo"
+terraformDir = "Terraform"
 
 def logo():
     print(colored(""" 

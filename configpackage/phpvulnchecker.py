@@ -208,7 +208,7 @@ if __name__ == "__main__":
     get_rule_values("id", vuln_ids_arr)
 
     # Get all php files
-    php_files_dir = "./TerraformDemo/php/" # Specify directory with php file TODO: Get vuln php codes
+    php_files_dir = "./Terraform/php/" # Specify directory with php file TODO: Get vuln php codes
     php_files_arr = []
     get_php_files(php_files_dir, php_files_arr)
 
