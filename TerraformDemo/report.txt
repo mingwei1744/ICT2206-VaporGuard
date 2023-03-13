@@ -1,4 +1,0 @@
-WARNING: Security rule sshd is using default SSH port
-WARNING: Security rule sshd is using default SSH port
-WARNING: Security rule sshd is using default SSH port
-WARNING: Security rule sshd is using default SSH port
