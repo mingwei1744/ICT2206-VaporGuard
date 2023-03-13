@@ -1,3 +1,4 @@
+import argparse
 import os
 import sys
 import re
@@ -6,8 +7,10 @@ import requests
 from termcolor import colored
 from Configpackage.configclass import UserConfig
 from Configpackage.phpvulnchecker import *
+from Configpackage.destroy import *
 
 terraformDir = "Terraform"
+configDir = "Configpackage"
 
 def logo():
     print(colored(""" 
@@ -65,7 +68,7 @@ conf = UserConfig()
 # However, if no keypair is being generated, deployment will not be successful.
 # -------------------------------------------------------------------------------
 # Wrapper function, signifying the start of the program
-def config_init():
+def start():
     logo()
     config_resource_name()
 
@@ -118,20 +121,24 @@ def config_vm_dns():
         config_vm_dns()
 
 # Function to get VM root username 
-# TODO: CHECK FOR UNUSABLE AZURE USERNAME
 def config_root_user():
     vm_root_user = input(colored(
         "3. Enter root username for Virtual Machine: ", "blue", attrs=['bold']))
 
     if check_empty_input(vm_root_user) == False:
-        if vm_root_user.isalnum():
+        # Check for use of common usernames
+        usernames = []
+        with open('./Configpackage/blacklist_username.txt', 'r') as file:
+            for user in file:
+                usernames.append(user.strip())
+        if vm_root_user.isalnum() and vm_root_user not in usernames:
             conf.set_rootuser(vm_root_user)
             inputPrint("VM Root Username: " + vm_root_user)
             bannerG()
             # Next
             config_web_user()
         else:
-            warningPrint("Invalid username")
+            warningPrint("Invalid username. Common username such as `admin`, `test`, `root` are blacklisted. See blacklisted usernames in config.")
             bannerR()
             config_root_user()
     else:
@@ -141,18 +148,23 @@ def config_root_user():
 
 # Function to get VM web username
 # F: Change to YES/NO create seperate user for web administrator? If NO, flag to report
-# TODO: CHECK IF WEBUSER != ROOTUSER
 def config_web_user():
     vm_web_user = input(colored(
         "4. Enter web admin username for Virtual Machine: ", "blue", attrs=['bold']))
 
     if check_empty_input(vm_web_user) == False:
         if vm_web_user.isalnum():
-            conf.set_webuser(vm_web_user)
-            inputPrint("VM Web Admin Username: " + vm_web_user)
-            bannerG()
-            # Next
-            config_domain_name()
+            # Check if web user = root user
+            if vm_web_user != conf.get_rootuser():
+                conf.set_webuser(vm_web_user)
+                inputPrint("VM Web Admin Username: " + vm_web_user)
+                bannerG()
+                # Next
+                config_domain_name()
+            else:
+                warningPrint("Web admin username cannot be the same as root username. Please select a different web admin username.")
+                bannerR()
+                config_web_user()
         else:
             warningPrint("Invalid username")
             bannerR()
@@ -483,11 +495,18 @@ def check_web_status():
     except:
         return False
 
-
 # Main 
 if __name__ == "__main__":
     try:
-        config_init()
+        # Create the argument parser
+        parser = argparse.ArgumentParser()
+        parser.add_argument("func", help="Begin deployment or Teardown deployed infrastructure", choices=['start', 'destroy'])
+        args = parser.parse_args()
+
+        if args.func == "start":
+            start()
+        elif args.func == "destroy":
+            destroy()
 
     except KeyboardInterrupt:
         warningPrint("\nExiting configuration...")
