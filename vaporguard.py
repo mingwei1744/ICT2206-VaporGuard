@@ -372,6 +372,9 @@ def generate_detailed_report():
 
 
     # Prompt user to proceed
+    print(colored("Please review report before continuing...", "yellow", attrs=["bold"]))
+    os.system('php_report.pdf')
+    time.sleep(10)
     begin_deployment()
 
 # -------------------------------------------------------------------------------

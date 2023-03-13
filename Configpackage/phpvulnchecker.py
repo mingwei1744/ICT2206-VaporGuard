@@ -196,8 +196,8 @@ def generate_php_report(result_dict, php_files_dir):
 
     # For each file, and vulnerable codeLines
     for file, codeLines in result_dict.items():
-        print("*"*50)
-        print(f"Potential vulnerability found in: [{file.strip(php_files_dir)}]")
+        #print("*"*50)
+        #print(f"Potential vulnerability found in: [{file.strip(php_files_dir)}]")
 
         filename_style = styles["Heading2"]
         filename_style.alignment = 0
@@ -234,7 +234,7 @@ def generate_php_report(result_dict, php_files_dir):
                 #print(get_rule_infos(value_split2))
 
                 info = get_rule_infos(value_split2) # CHANGE TO SINGLE STRING FORMAT
-                print(info)
+                #print(info)
                 info_style = styles["Normal"]
                 info_style.fontSize = 14
                 info_style.leading = 14 * 1.2
