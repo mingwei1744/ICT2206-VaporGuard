@@ -3,4 +3,6 @@ bc-python-hcl2<=0.3.50
 checkov==2.3.62
 requests
 reportlab
+PyPDF2~=2.0
 openai
+termcolor
