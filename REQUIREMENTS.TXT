@@ -1,5 +1,5 @@
-pip install pyhcl==0.4.4
-pip install bc-python-hcl2-0.3.51
-pip install checkov==2.3.62
-pip install requests
-pip install reportlab
+pyhcl==0.4.4
+bc-python-hcl2-0.3.51
+checkov==2.3.62
+requests
+reportlab
