@@ -8,6 +8,7 @@ class UserConfig:
         self.web_domain_name = ""
         self.database_key = ""
         self.email = ""
+        self.web_codes = ""
 
     def get_resource_naming(self):
         return self.resource_naming
@@ -50,3 +51,9 @@ class UserConfig:
 
     def set_email(self, idata):
         self.email = idata
+
+    def get_web_codes(self):
+        return self.web_codes
+
+    def set_web_codes(self, idata):
+        self.web_codes = idata

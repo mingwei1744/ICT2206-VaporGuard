@@ -9,7 +9,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 
 # PHP rules stated in json format
-with open('./php_rules.json') as f:
+with open('./Configpackage/php_rules.json') as f:
     data = json.load(f)
 
 # Function to get specific key-value from all rules
@@ -183,7 +183,7 @@ def find_var_declaration(filename, var_search_list):
                     break 
 
 # Generate presentable values from the result dictionary
-def generate_php_report(result_dict):
+def generate_php_report(result_dict, php_files_dir):
     php_report = SimpleDocTemplate("php_report.pdf", pagesize=landscape(A1))
     styles = getSampleStyleSheet()
     report_info = []
@@ -245,23 +245,22 @@ def generate_php_report(result_dict):
 
     php_report.build(report_info)
 
-# TODO: Change to argpaser for main python file to call
-if __name__ == "__main__":
-    # Get all vulnerabilities IDs
-    vuln_ids_arr = []
-    get_rule_values("id", vuln_ids_arr)
+# if __name__ == "__main__":
+#     # Get all vulnerabilities IDs
+#     vuln_ids_arr = []
+#     get_rule_values("id", vuln_ids_arr)
 
-    # Get all php files
-    php_files_dir = "./Terraform/php/" # Specify directory with php file TODO: Get vuln php codes
-    php_files_arr = []
-    get_php_files(php_files_dir, php_files_arr)
+#     # Get all php files
+#     php_files_dir = "./vulns/" # Specify directory with php file TODO: Get vuln php codes
+#     php_files_arr = []
+#     get_php_files(php_files_dir, php_files_arr)
 
-    # Store results into a dictionary
-    vuln_results_consolidated = {}
-    for phpfiles in php_files_arr:
-        phpfile = php_files_dir + phpfiles
-        for vuln_id in vuln_ids_arr:
-            # Generate results with phpfile, checker(), store_in_dict
-            store_results(phpfile, php_vuln_checker2(phpfile, vuln_id), vuln_results_consolidated)
+#     # Store results into a dictionary
+#     vuln_results_consolidated = {}
+#     for phpfiles in php_files_arr:
+#         phpfile = php_files_dir + phpfiles
+#         for vuln_id in vuln_ids_arr:
+#             # Generate results with phpfile, checker(), store_in_dict
+#             store_results(phpfile, php_vuln_checker2(phpfile, vuln_id), vuln_results_consolidated)
 
-    generate_php_report(vuln_results_consolidated)
+#     generate_php_report(vuln_results_consolidated)

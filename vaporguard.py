@@ -5,6 +5,7 @@ import time
 import requests
 from termcolor import colored
 from Configpackage.configclass import UserConfig
+from Configpackage.phpvulnchecker import *
 
 terraformDir = "Terraform"
 
@@ -60,12 +61,15 @@ conf = UserConfig()
 # -------------------------------------------------------------------------------
 # Start of VaporGuard program
 # Get user input
-# TODO: Add a stage to generate keypair?
+# TODO: Add a stage to generate keypair? Currently manual generation of key by user.
+# However, if no keypair is being generated, deployment will not be successful.
 # -------------------------------------------------------------------------------
+# Wrapper function, signifying the start of the program
 def config_init():
     logo()
     config_resource_name()
 
+# Function to check valid naming convention for Azure resources
 def check_valid_naming(input_str):
     if not any(char.isalpha() for char in input_str):
         return False
@@ -114,6 +118,7 @@ def config_vm_dns():
         config_vm_dns()
 
 # Function to get VM root username 
+# TODO: CHECK FOR UNUSABLE AZURE USERNAME
 def config_root_user():
     vm_root_user = input(colored(
         "3. Enter root username for Virtual Machine: ", "blue", attrs=['bold']))
@@ -136,6 +141,7 @@ def config_root_user():
 
 # Function to get VM web username
 # F: Change to YES/NO create seperate user for web administrator? If NO, flag to report
+# TODO: CHECK IF WEBUSER != ROOTUSER
 def config_web_user():
     vm_web_user = input(colored(
         "4. Enter web admin username for Virtual Machine: ", "blue", attrs=['bold']))
@@ -184,6 +190,7 @@ def config_domain_name():
         bannerR()
         config_domain_name()
 
+# Function to get database password
 def check_valid_password(password):
     pattern = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"
     if re.match(pattern, password):
@@ -191,7 +198,6 @@ def check_valid_password(password):
     else:
         return False
 
-# Function to get database password
 def config_database_key():
     print(colored("Access key should meet the following criteria:\n \
         - It is alphanumeric. \n \
@@ -235,7 +241,7 @@ def config_email_address():
             inputPrint("Email address: " + email_address)
             bannerG()
             # Next
-            begin_deployment()
+            config_web_codes()
         else:
             warningPrint("Invalid email address")
             bannerR()
@@ -244,7 +250,40 @@ def config_email_address():
         warningPrint("An email address is required for SSL cert")
         bannerR()
         config_email_address()
-        
+
+# Function to get php directory
+def find_php_directory(path):
+    directories = []
+    for root, dirs, files in os.walk(path):
+        if any(file.endswith(('.php', '.html', '.js')) for file in files):
+            dir = root.replace("\\", "/")
+            directories.append(dir + "/")
+    return directories
+
+def config_web_codes():
+    dirs = find_php_directory("./")
+    for dir in range(len(dirs)):
+        print(colored(f"{dir+1}) {dirs[dir]}", "blue", attrs=['bold']))
+    
+    if len(dirs) !=0:
+        web_codes_dir = input(colored(f"8. Select directory of web codes to upload [1-{len(dirs)}]: ", "blue", attrs=['bold']))
+
+        if check_empty_input(web_codes_dir) == False:
+            conf.set_web_codes(dirs[int(web_codes_dir)-1])
+            inputPrint("Web code directory: " + dirs[int(web_codes_dir)-1])
+            bannerG()
+            # Next
+            create_tfvars()
+        else:
+            warningPrint("Please select which directory to upload")
+            bannerR()
+            config_web_codes()
+
+    else:
+        warningPrint("No web codes found in current workspace. Please add your web files to upload")
+        bannerR()
+        config_web_codes()
+
 # -------------------------------------------------------------------------------
 # Create tfvars file with user input
 # -------------------------------------------------------------------------------
@@ -272,8 +311,9 @@ def create_tfvars():
     config_web_domain = "website-dns = " + val_wrap(conf.get_web_domain_name())
     config_database_key = "database-pwd = " + val_wrap(conf.get_database_key())
     config_email_address = "email = " + val_wrap(conf.get_email())
+    config_web_codes = "web-codes = " + val_wrap(conf.get_web_codes())
 
-    configs = [config_resource_naming, config_vm_dns, config_root_user, config_webadm_user, config_web_domain, config_database_key, config_email_address]
+    configs = [config_resource_naming, config_vm_dns, config_root_user, config_webadm_user, config_web_domain, config_database_key, config_email_address, config_web_codes]
 
     for config in configs:
         file.write(config)
@@ -281,9 +321,46 @@ def create_tfvars():
 
     file.close()
 
-    # Next
-    print(colored("Commencing Terraform deployment...", "green", attrs=["bold"]))
-    tf_init()
+    # Next, Generate detailed report on full stack
+    print(colored("Generating Detailed Report...", "green", attrs=["bold"]))
+    generate_detailed_report()
+        
+# -------------------------------------------------------------------------------
+# Generate Report
+# -------------------------------------------------------------------------------
+def generate_detailed_report():
+    
+    # TODO: Generate Cloud Config Report
+
+    # TODO: Generate Config Scripts Report
+
+    # Generate PHP Report
+    # Get all vulnerabilities IDs
+    vuln_ids_arr = []
+    get_rule_values("id", vuln_ids_arr)
+
+    # Get all php files
+    php_files_dir = "./vulns/" # Specify directory with php file TODO: Get vuln php codes
+    #php_files_dir = conf.get_web_codes()
+    php_files_arr = []
+    get_php_files(php_files_dir, php_files_arr)
+
+    # Store results into a dictionary
+    vuln_results_consolidated = {}
+    for phpfiles in php_files_arr:
+        phpfile = php_files_dir + phpfiles
+        for vuln_id in vuln_ids_arr:
+            # Generate results with phpfile, checker(), store_in_dict
+            store_results(phpfile, php_vuln_checker2(phpfile, vuln_id), vuln_results_consolidated)
+
+    generate_php_report(vuln_results_consolidated, php_files_dir)
+
+    # Merge?
+    # Open report and ask for user prompt to continue
+
+
+    # Prompt user to proceed
+    begin_deployment()
 
 # -------------------------------------------------------------------------------
 # Terraform Deployment
@@ -293,12 +370,14 @@ def begin_deployment():
     deploy_confirmation = input(
         colored("Ready to start? (Y/N): ", "blue", attrs=["bold"]))
 
+    # Agrees to begin deployment
     if deploy_confirmation.upper() == "Y" or deploy_confirmation.upper() == "YES":
         # Render .auto.tfvars tfile after user confirmation
         # next
         bannerG()
-        create_tfvars()
+        #tf_init()
 
+    # Do not agree to being deployment
     elif deploy_confirmation.upper() == "N" or deploy_confirmation.upper() == "N":
 
         exit_config = input(colored(
@@ -322,7 +401,6 @@ def begin_deployment():
         begin_deployment()
 
 # Function to start Terraform deployment
-# TODO: ADD VALIDATION CHECKER FUNCTION AT THIS STAGE BEFORE TF DEPLOYMENT
 def tf_init():
     # Checker for successful Terraform deployment
     success = 0
