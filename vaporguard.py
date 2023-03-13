@@ -4,7 +4,7 @@ import re
 import time
 import requests
 from termcolor import colored
-from configpackage.configclass import UserConfig
+from Configpackage.configclass import UserConfig
 
 terraformDir = "Terraform"
 

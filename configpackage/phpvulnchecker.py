@@ -9,7 +9,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 
 # PHP rules stated in json format
-with open('./configpackage/php_rules.json') as f:
+with open('./php_rules.json') as f:
     data = json.load(f)
 
 # Function to get specific key-value from all rules
@@ -137,6 +137,50 @@ def shannon_entropy(data, iter):
     return entropy
 
 #TODO: Checker Functions for SQLINJECT, XSS, SESSIONS and high false positive rules in php_rules.json
+# Function to analyse var declaration to reduce false positives where static value is declared in variable
+def check_var_declaration(potential_vuln_code, filename):
+    # List of potential vuln ids that may return false positives if based solely on pattern matching
+    false_pos_id = ["A03.9"] # ADD high false positive vuln ID here
+
+    # Regex for php var declaration = $var
+    varPattern = "=\\s*[\"|']?\\$[\\x00-\\x7F]+"
+    # Regex for php http methods
+    methodPattern = "\\$_(GET|POST|PUT|DELETE|REQUEST|COOKIE)\\[[\\x00-\\x7F]+\\]"
+
+    for id in false_pos_id:
+        if id in potential_vuln_code:
+            varMatch = re.search(varPattern, potential_vuln_code)
+            methodMatch = re.search(methodPattern, potential_vuln_code)
+            # Filter out http request methods declaration as this is already flagged by the rules set
+            if varMatch and not methodMatch:
+                raw_var_searchList = re.findall(varPattern, potential_vuln_code) # ['= \'$var\'";']
+                #print(raw_var_searchList)
+
+                # Variable sanitisation
+                varPat = r"\$[\w]+"
+                for v in raw_var_searchList:
+                    var_search_list = re.findall(varPat, v) # ['$var']
+                #print(var_search_list)
+                find_var_declaration(filename, var_search_list)
+            else:
+                print("No Match")
+
+# Function to find potential vunerable dynamic declaration
+# $var = $_GET['req']          
+def find_var_declaration(filename, var_search_list):
+    with open(filename, 'r') as file:
+        for line in file:
+            for var in var_search_list:
+                if var in line:
+                    varStrip = var.strip("$") # var
+                    vulnPattern = f"\\${varStrip}\\s*=\\s*\\$_(GET|POST|PUT|DELETE|REQUEST|COOKIE)\\[[\\x00-\\x7F]+\\]"
+                    vulnMatch = re.search(vulnPattern, line)
+
+                    # Vulnerable declaration line found
+                    if vulnMatch:
+                        #TODO: Do something
+                        print(line)
+                    break 
 
 # Generate presentable values from the result dictionary
 def generate_php_report(result_dict):
