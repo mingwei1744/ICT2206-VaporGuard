@@ -16,7 +16,7 @@
       {
         "id": "A01.2",
         "name": "Broken Access Control",
-        "pattern-match": "header",
+        "pattern-match": "(H|h)eader",
         "pattern-include": "\\(\\s*(\"|')\\s*(l|L)ocation:\\s*\\S?\\s*\\.?\\s*(https?://\\S+|\\$[\\x00-\\x7F]+)(\"|')?\\s*\\)",
         "pattern-exclude": "\\(\\s*(\"|')\\s*(l|L)ocation:\\s*\\S?\\s*\\.?\\s*(\\$_SERVER\\['PHP_SELF']|\\$BASE_URL.\\$_SERVER\\['REQUEST_URI'\\]|\\$SERVER\\['HTTP_HOST'\\].\\$_SERVER\\['REQUEST_URI'\\])(\"|')?\\s*\\)",
         "message": " Redirecting to the current request URL may redirect to another domain, if the current path starts with two slashes.",
@@ -185,7 +185,7 @@
       {
         "id": "A03.7",
         "name": "Non-Literal Header",
-        "pattern-match": "header",
+        "pattern-match": "(H|h)eader",
         "pattern-include": "\\(\\s*(\"|')\\S+:\\s*\\S?\\s*\\.?\\s*\\$[\\w-]+\\S?\\s*\\)",
         "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
         "message": "Using user input when setting headers with `header()` is potentially dangerous.\nThis could allow an attacker to inject a new line and add a new header into the response.",
@@ -206,6 +206,19 @@
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
         "fix": ""
+      },
+
+      {
+        "id": "A03.9",
+        "name": "SQL Injection",
+        "pattern-match": "(?i)(select|delete|insert|create|update|alter|drop)",
+        "pattern-include": "\\$_(GET|POST|REQUEST|COOKIE)\\[[\\x00-\\x7F]+\\]",
+        "pattern-exclude": "28dc14b497b55ff421955d6145eb8fa0dce3e540efe55942870e82ddfc65dce7",
+        "message": "Detected manually-constructed SQL strings. A possible indicator of SQL injection.",
+        "severity": "Medium",
+        "owasp": "A03:2021 - Injection",
+        "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+        "fix": "Consider using SQL prepared statements or a safe library"
       },
   
       {
@@ -289,9 +302,9 @@
       {
         "id": "OVN.2",
         "name": "Basic Authentication use",
-        "pattern-match": "(\\$_SERVER\\[(\"|')PHP_AUTH_USER(\"|')\\]|\\$_SERVER\\[(\"|')PHP_AUTH_PW(\"|')\\]|header\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Basic realm\\s*=)",
-        "pattern-include": "(\\$_SERVER\\[(\"|')PHP_AUTH_USER(\"|')\\]|\\$_SERVER\\[(\"|')PHP_AUTH_PW(\"|')\\]|header\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Basic realm\\s*=)",
-        "pattern-exclude": "(\\$_SERVER\\[(\"|')PHP_AUTH_DIGEST(\"|')\\]|header\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Digest realm\\s*=)",
+        "pattern-match": "(\\$_SERVER\\[(\"|')PHP_AUTH_USER(\"|')\\]|\\$_SERVER\\[(\"|')PHP_AUTH_PW(\"|')\\]|(H|h)eader\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Basic realm\\s*=)",
+        "pattern-include": "(\\$_SERVER\\[(\"|')PHP_AUTH_USER(\"|')\\]|\\$_SERVER\\[(\"|')PHP_AUTH_PW(\"|')\\]|(H|h)eader\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Basic realm\\s*=)",
+        "pattern-exclude": "(\\$_SERVER\\[(\"|')PHP_AUTH_DIGEST(\"|')\\]|(H|h)eader\\s*\\(\\s*(\"|')WWW-Authenticate\\s*:\\s*Digest realm\\s*=)",
         "message": "HTTP basic authentication in use. Credentials are stored in Base64-encoded string. Consider using stronger alternatives.",
         "severity": "Medium",
         "owasp": "",
