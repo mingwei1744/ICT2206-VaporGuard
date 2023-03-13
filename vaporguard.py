@@ -8,7 +8,7 @@ from termcolor import colored
 from Configpackage.configclass import UserConfig
 from Configpackage.phpvulnchecker import *
 from Configpackage.destroy import *
-
+import subprocess
 terraformDir = "Terraform"
 configDir = "Configpackage"
 
@@ -343,7 +343,7 @@ def create_tfvars():
 def generate_detailed_report():
     
     # TODO: Generate Cloud Config Report
-
+    subprocess.call(['python', 'validate_config.py'], cwd='./Configpackage/')
     # TODO: Generate Config Scripts Report
 
     # Generate PHP Report

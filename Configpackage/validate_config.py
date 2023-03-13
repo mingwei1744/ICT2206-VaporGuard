@@ -117,15 +117,14 @@ def main():
     runner_filter = RunnerFilter(framework=["terraform"], include_all_checkov_policies=True)
     # Initialize a runner
     runner = Runner()
-    # Load external checks from current directory, includes main.tf,outputs,prodivers and etc
-    external_checks_dir = "."
+    # Load external checks from current directory, includes main.tf,outputs,providers and etc
+
     external_checks = [f"{external_checks_dir}/{f}" for f in os.listdir(external_checks_dir) if f.endswith(".tf")]
     runner.load_external_checks(external_checks)
     # Scan folders & sub folders recursively for .tf files and get the results - checkov
-    report = runner.run(root_folder=".", runner_filter=runner_filter)
+    report = runner.run(root_folder=external_checks_dir, runner_filter=runner_filter)
     # location of report.json and pdf would be created
-    json_file_path = "./report/report.json"
-    report_file_path = "./report/report.pdf"
+
     # Write the results to a JSON file for data processing/used for other modules
     with open(json_file_path, "w") as f:
         json.dump(report.get_dict(), f, indent=4)
@@ -142,4 +141,16 @@ def main():
             if not bool(config):
                 continue
     #Do something to the particular .tf file
-main()
+
+
+if __name__ == "__main__":
+    # code for the main program here
+    external_checks_dir = "../Terraform"
+    json_file_path = "./report.json"
+    report_file_path = "../report/report.pdf"
+    main()
+else:
+    external_checks_dir = "./Terraform"
+    json_file_path = "./Configpackage/report.json"
+    report_file_path = "./report/report.pdf"
+    main()

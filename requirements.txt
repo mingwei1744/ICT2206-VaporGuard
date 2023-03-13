@@ -1,5 +1,6 @@
 pyhcl==0.4.4
-bc-python-hcl2-0.3.51
+bc-python-hcl2<=0.3.50
 checkov==2.3.62
 requests
 reportlab
+openai
