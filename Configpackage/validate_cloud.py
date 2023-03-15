@@ -89,7 +89,7 @@ def generate_report(json_file_path, report_file_path):
     # Create a custom style for the section header
     styles = getSampleStyleSheet()
     section_header_style = styles['Heading1']
-    section_header_style.fontSize = 24
+    section_header_style.fontSize = 40
     section_header_style.leading = 30
     section_header_style.alignment = 1  # Center alignment
 
@@ -161,9 +161,9 @@ def generate_cloud_report(external_checks_dir, json_file_path, report_file_path)
 #     external_checks_dir = "../Terraform"
 #     json_file_path = "./report.json"
 #     report_file_path = "../report/report.pdf"
-#     main()
+#     generate_cloud_report(external_checks_dir,json_file_path,report_file_path)
 # else:
 #     external_checks_dir = "./Terraform"
 #     json_file_path = "./Configpackage/report.json"
 #     report_file_path = "./report/report.pdf"
-#     main()
+#     generate_cloud_report(external_checks_dir, json_file_path, report_file_path)
