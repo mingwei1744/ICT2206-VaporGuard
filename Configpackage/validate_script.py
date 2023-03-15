@@ -99,11 +99,11 @@ def CVE_number(pkg_name, pkg_version):
 def get_all_files():
 	lemp_files_dir = TPL_FOLDER # Specify directory with php file TODO: Get vuln php codes
 	lemp_files_arr = []
-	get_php_files(lemp_files_dir, lemp_files_arr)
+	get_tpl_files(lemp_files_dir, lemp_files_arr)
 	return lemp_files_arr
 
 # Function to get list of php files
-def get_php_files(dir, result):
+def get_tpl_files(dir, result):
     # Loop through directory 
     for file in os.listdir(dir):
         # File uri
@@ -113,7 +113,7 @@ def get_php_files(dir, result):
             if file.endswith('.tpl'):
                 result.append(file)
 
-def get_lemp_pdf_report():
+def generate_script_report():
 	apt_update_checked = False
 	validated = False
 	mysqlSecureChecked = False
@@ -125,7 +125,7 @@ def get_lemp_pdf_report():
 	apt_update_pattern = r"apt(-get)? update(\s-y)?"
 	apt_install_pattern = r"apt(-get)? install(=[\d.]+)?(\s-y)?"
 
-	lemp_report = SimpleDocTemplate("Lemp Configuration Report.pdf", pagesize=landscape(A1))
+	lemp_report = SimpleDocTemplate("./report/2_report_scripts.pdf", pagesize=landscape(A1))
 	styles = getSampleStyleSheet()
 	report_info = []
 	lemp_files = get_all_files()
@@ -269,6 +269,5 @@ def get_lemp_pdf_report():
 					line_style.alignment = 0
 					line_data = Paragraph(formatLine, line_style)
 					report_info.append(line_data)
+	
 	lemp_report.build(report_info)
-
-get_lemp_pdf_report()

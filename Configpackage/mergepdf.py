@@ -21,5 +21,7 @@ def merge_pdfs(input_dir, output_path):
     with open(output_path, 'wb') as output_file:
         pdf_merger.write(output_file)
 
+def remove_files(file_list):
+    for file in file_list:
+        os.remove(file)
 
-#merge_pdfs('./', './new.pdf')

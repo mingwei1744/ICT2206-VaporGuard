@@ -6,9 +6,13 @@ import time
 import requests
 from termcolor import colored
 from Configpackage.configclass import UserConfig
-from Configpackage.phpvulnchecker import *
+from Configpackage.validate_php import *
 from Configpackage.destroy import *
-import subprocess
+from Configpackage.validate_script import *
+from Configpackage.validate_cloud import *
+from Configpackage.mergepdf import *
+import webbrowser
+
 terraformDir = "Terraform"
 configDir = "Configpackage"
 
@@ -343,8 +347,13 @@ def create_tfvars():
 def generate_detailed_report():
     
     # TODO: Generate Cloud Config Report
-    subprocess.call(['python', 'validate_config.py'], cwd='./Configpackage/')
+    external_checks_dir = "./Terraform"
+    json_file_path = "./Configpackage/report.json"
+    report_file_path = "./report/1_report_cloud.pdf"
+    generate_cloud_report(external_checks_dir, json_file_path, report_file_path)
+
     # TODO: Generate Config Scripts Report
+    generate_script_report()
 
     # Generate PHP Report
     # Get all vulnerabilities IDs
@@ -369,7 +378,14 @@ def generate_detailed_report():
 
     # Merge?
     # Open report and ask for user prompt to continue
+    merge_pdfs("./report/", "./report/vaporguard.pdf")
 
+    reports = ["./report/1_report_cloud.pdf", "./report/2_report_scripts.pdf", "./report/3_report_php.pdf"]
+    remove_files(reports)
+
+    vaporguard_report = "./report/vaporguard.pdf"
+    os.system(vaporguard_report)
+    webbrowser.open_new_tab(vaporguard_report)
 
     # Prompt user to proceed
     begin_deployment()

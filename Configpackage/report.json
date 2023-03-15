@@ -57,7 +57,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     16,
@@ -81,37 +81,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -119,13 +119,13 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -133,31 +133,31 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -218,7 +218,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     16,
@@ -242,37 +242,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -280,13 +280,13 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -294,31 +294,31 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -537,7 +537,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     37,
@@ -561,69 +561,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "resource_group_name": [
-                        {
-                            "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -631,13 +599,45 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "tfvar",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -856,7 +856,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     37,
@@ -880,69 +880,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "resource_group_name": [
-                        {
-                            "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -950,13 +918,45 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "tfvar",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -1023,7 +1023,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     113,
@@ -1047,37 +1047,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -1085,31 +1085,31 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -1117,13 +1117,13 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -1372,7 +1372,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     127,
@@ -1396,19 +1396,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
-                    "connection.user": [
+                    "name": [
                         {
                             "type": "tfvar",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -1416,45 +1434,27 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
-                    "name": [
+                    "connection.user": [
                         {
                             "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -1462,27 +1462,13 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -1490,31 +1476,45 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -1765,7 +1765,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     127,
@@ -1789,19 +1789,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
-                    "connection.user": [
+                    "name": [
                         {
                             "type": "tfvar",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -1809,45 +1827,27 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
-                    "name": [
+                    "connection.user": [
                         {
                             "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -1855,27 +1855,13 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -1883,31 +1869,45 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -2158,7 +2158,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     127,
@@ -2182,19 +2182,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
-                    "connection.user": [
+                    "name": [
                         {
                             "type": "tfvar",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -2202,45 +2220,27 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
-                    "name": [
+                    "connection.user": [
                         {
                             "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -2248,27 +2248,13 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -2276,31 +2262,45 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -2549,7 +2549,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     127,
@@ -2573,19 +2573,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
-                    "connection.user": [
+                    "name": [
                         {
                             "type": "tfvar",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -2593,45 +2611,27 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
-                    "name": [
+                    "connection.user": [
                         {
                             "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -2639,27 +2639,13 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -2667,31 +2653,45 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -2918,7 +2918,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     37,
@@ -2942,69 +2942,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "resource_group_name": [
-                        {
-                            "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -3012,13 +2980,45 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "tfvar",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -3243,7 +3243,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     37,
@@ -3267,69 +3267,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "resource_group_name": [
-                        {
-                            "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -3337,13 +3305,45 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "resource_group_name": [
+                        {
+                            "type": "tfvar",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "variable",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -3594,7 +3594,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     127,
@@ -3618,19 +3618,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
-                    "connection.user": [
+                    "name": [
                         {
                             "type": "tfvar",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -3638,45 +3656,27 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
-                    "name": [
+                    "connection.user": [
                         {
                             "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -3684,27 +3684,13 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -3712,31 +3698,45 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -3987,7 +3987,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     127,
@@ -4011,19 +4011,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
-                    "connection.user": [
+                    "name": [
                         {
                             "type": "tfvar",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "name": "naming",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_virtual_network.vn-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_public_ip.pip-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -4031,45 +4049,27 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
-                    "name": [
+                    "connection.user": [
                         {
                             "type": "tfvar",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
-                            "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "name": "admin-user",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -4077,27 +4077,13 @@
                         {
                             "type": "tfvar",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "admin-user",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        }
-                    ],
-                    "location": [
-                        {
-                            "type": "variable",
-                            "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
-                            "module_connection": false
-                        },
-                        {
-                            "type": "resource",
-                            "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         }
                     ],
@@ -4105,31 +4091,45 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "location": [
+                        {
+                            "type": "variable",
+                            "name": "location",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "module_connection": false
+                        },
+                        {
+                            "type": "resource",
+                            "name": "azurerm_resource_group.rg-automate-test",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]
@@ -4166,10 +4166,10 @@
                                     "East US"
                                 ],
                                 "name": [
-                                    "-nic"
+                                    "mergetest-nic"
                                 ],
                                 "resource_group_name": [
-                                    "-resource-group"
+                                    "mergetest-resource-group"
                                 ],
                                 "__address__": "azurerm_network_interface.nic-automate-test"
                             }
@@ -4230,7 +4230,7 @@
                     ]
                 ],
                 "file_path": "/main.tf",
-                "file_abs_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "file_abs_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "repo_file_path": "/Terraform/main.tf",
                 "file_line_range": [
                     113,
@@ -4254,37 +4254,37 @@
                 "guideline": null,
                 "details": [],
                 "check_len": null,
-                "definition_context_file_path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                "definition_context_file_path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                 "breadcrumbs": {
                     "name": [
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -4292,31 +4292,31 @@
                         {
                             "type": "tfvar",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\userconfig.auto.tfvars",
                             "module_connection": false
                         },
                         {
                             "type": "variable",
                             "name": "naming",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_virtual_network.vn-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_public_ip.pip-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ],
@@ -4324,13 +4324,13 @@
                         {
                             "type": "variable",
                             "name": "location",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\variables.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\variables.tf",
                             "module_connection": false
                         },
                         {
                             "type": "resource",
                             "name": "azurerm_resource_group.rg-automate-test",
-                            "path": "A:\\Users\\JJ\\Documents\\GitHub\\ICT2206-VapourGuard\\Terraform\\main.tf",
+                            "path": "D:\\Dev\\GithubProjects\\ICT2206-VapourGuard\\Terraform\\main.tf",
                             "module_connection": false
                         }
                     ]

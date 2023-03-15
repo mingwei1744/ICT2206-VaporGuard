@@ -184,7 +184,7 @@ def find_var_declaration(filename, var_search_list):
 
 # Generate presentable values from the result dictionary
 def generate_php_report(result_dict, php_files_dir):
-    php_report = SimpleDocTemplate("php_report.pdf", pagesize=landscape(A1))
+    php_report = SimpleDocTemplate("./report/3_report_php.pdf", pagesize=landscape(A1))
     styles = getSampleStyleSheet()
     report_info = []
 
