@@ -6,9 +6,10 @@ import requests.exceptions
 from checkov.runner_filter import RunnerFilter
 from checkov.terraform.runner import Runner
 import json
-from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib.pagesizes import A1, landscape
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet
 import openai
 import time
 
@@ -67,7 +68,6 @@ def generate_report(json_file_path, report_file_path):
         ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
         ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
-        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
         ('FONTSIZE', (0, 0), (-1, 0), 14),
         ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
         ('GRID', (0, 0), (-1, -1), 1, colors.black),
@@ -85,7 +85,20 @@ def generate_report(json_file_path, report_file_path):
         table_style.append(('TEXTCOLOR', (-1, i), (-1, i), status_color))
 
     table.setStyle(TableStyle(table_style))
-    doc.build([table])
+
+    # Create a custom style for the section header
+    styles = getSampleStyleSheet()
+    section_header_style = styles['Heading1']
+    section_header_style.fontSize = 24
+    section_header_style.leading = 30
+    section_header_style.alignment = 1  # Center alignment
+
+    # Create the section header Paragraph object
+    section_header = Paragraph("Terraform Scan Results", section_header_style)
+
+    # Add the section header and table to the PDF
+    doc.build([section_header, Spacer(1, 20), table])
+
 
 def read_config_file(config_file_path):
     with open(config_file_path, 'r') as f:
