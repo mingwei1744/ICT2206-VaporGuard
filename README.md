@@ -1,10 +1,23 @@
-# ICT2206 Assignment 1
+<div align="center">
+<h1> ICT2206 Assignment 1 </h1>
 ICT2206 Web Security Assignment-1. The development of a defensive web application.
+</div>
 
-## VapourGuard 🛡️
-Validating Web deployments on content delivery platform.
+<div align="center">
+<h1> VapourGuard 🛡️ </h1>
+<p> Cloud security is a crucial aspect in today's digital landscape. The increasing adoption of cloud infrastructure to host web applications has motivated us to develop this tool, VaporGuard. </p>
+<p> This tool focuses on validating web pre-deployments on a content delivery platform. Both the cloud configurations and web framework configurations will be analysed in a pre-deployment environment. </p>
+</div>
 
-## Setup
+## Pre-requisites and Setup 🛠️
+
+### Requirements
+* Azure cloud account
+* Terraform
+* Python3
+* Any PDF reader (Browser, Adobe Reader etc.)
+
+### Setup
 1. Download [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) and add binary to PATH <br />
 > Check if Terraform has been successfully installed <br />
 ```
@@ -19,42 +32,38 @@ az login
 ```
 ![azlogin](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/azlogin.png)
 
-## Deployment
-a) Generate a key in the /Terraform/keys directory (Mimicking Lab steps)
-> *Do not commit the keys to the Github repo! 
+4. Install python dependencies
+```
+pip install -r requirements.txt
+```
+
+## Using VaporGuard 🤖
+a) Generate a keypair in the /Terraform/keys directory
 ```
 cd /Terraform/keys
 ssh-keygen -t ecdsa -b 521
 ```
 ![keypair](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/keypair.png)
 
-b) Edit your FQ domain name in /Terraform/variables.tf
-> E.g., www.my-domain.com ; Remember to bind your domain name in Porkbun after deployment
+b) Start VaporGuard
+```
+python vaporguard.py start
+```
+![start](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
-c) Initialize a working directory containing Terraform configuration files.
-> From the main working directory /Terraform run terraform init
-```
-terraform init
-```
+c) Submit the relevant prompts for the infrastructure to be deployed
+![level1](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
-d) Preview execution plan
-> From the main working directory /Terraform run terraform plan.
-```
-terraform plan
-```
+d) Analysis will commence once step c. has been validated
+![level2](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
-e) Start deployment
-> From the main working directory /Terraform run terraform apply.
-```
-terraform apply
-```
+e) A detailed report will be generated prior to the commencement of deployment
+![report](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
-## Teardown
+## Teardown 🗑
 a) To remove all objects deployed
-> From the main working directory /Terraform run terraform destroy
 ```
-terraform destroy
+python vaporguard.py destroy
 ```
+![destroy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
-
-**Pending TODOs commented
