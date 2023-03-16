@@ -10,11 +10,15 @@ from Configpackage.validate_php import *
 from Configpackage.destroy import *
 from Configpackage.validate_script import *
 from Configpackage.validate_cloud import *
+from Configpackage.scan_progress import *
 from Configpackage.mergepdf import *
-import webbrowser
 
-terraformDir = "Terraform"
-configDir = "Configpackage"
+# -------------------------------------------------------------------------------
+# Directory initialisation
+# -------------------------------------------------------------------------------
+terraform_dir = "./Terraform"
+config_dir = "./Configpackage"
+report_dir = "./Reports"
 
 def logo():
     print(colored(""" 
@@ -80,7 +84,7 @@ def start():
 def check_valid_naming(input_str):
     if not any(char.isalpha() for char in input_str):
         return False
-    return all(char.isalnum() or char == '-' for char in input_str)
+    return all(char.isalnum() and len(input_str) >=3 or char == '-' for char in input_str)
 
 # Function to get resource name
 def config_resource_name():
@@ -132,7 +136,7 @@ def config_root_user():
     if check_empty_input(vm_root_user) == False:
         # Check for use of common usernames
         usernames = []
-        with open('./Configpackage/blacklist_username.txt', 'r') as file:
+        with open(f'./{config_dir}/blacklist_username.txt', 'r') as file:
             for user in file:
                 usernames.append(user.strip())
         if vm_root_user.isalnum() and vm_root_user not in usernames:
@@ -142,7 +146,7 @@ def config_root_user():
             # Next
             config_web_user()
         else:
-            warningPrint("Invalid username. Common username such as `admin`, `test`, `root` are blacklisted. See blacklisted usernames in config.")
+            warningPrint("Invalid username. Common username such as `admin`, `test`, `root` are not allowed. See blacklisted usernames in config.")
             bannerR()
             config_root_user()
     else:
@@ -157,7 +161,12 @@ def config_web_user():
         "4. Enter web admin username for Virtual Machine: ", "blue", attrs=['bold']))
 
     if check_empty_input(vm_web_user) == False:
-        if vm_web_user.isalnum():
+        # Check for use of common usernames
+        usernames = []
+        with open(f'./{config_dir}/blacklist_username.txt', 'r') as file:
+            for user in file:
+                usernames.append(user.strip())
+        if vm_web_user.isalnum() and vm_web_user not in usernames:
             # Check if web user = root user
             if vm_web_user != conf.get_rootuser():
                 conf.set_webuser(vm_web_user)
@@ -170,7 +179,7 @@ def config_web_user():
                 bannerR()
                 config_web_user()
         else:
-            warningPrint("Invalid username")
+            warningPrint("Invalid username. Common username such as `admin`, `test`, `root` are not allowed. See blacklisted usernames in config.")
             bannerR()
             config_web_user()
     else:
@@ -315,7 +324,7 @@ def val_wrap(val):
 
 # Writing user input to tfvars
 def create_tfvars():
-    tfvar_cf = os.getcwd() + f"\\{terraformDir}\\userconfig.auto.tfvars"
+    tfvar_cf = os.getcwd() + f".\\{terraform_dir}\\userconfig.auto.tfvars"
     tfvar_config_file = tfvar_cf.replace("\\", "/")
     
     file = open(tfvar_config_file, "w")
@@ -327,7 +336,10 @@ def create_tfvars():
     config_web_domain = "website-dns = " + val_wrap(conf.get_web_domain_name())
     config_database_key = "database-pwd = " + val_wrap(conf.get_database_key())
     config_email_address = "email = " + val_wrap(conf.get_email())
-    config_web_codes = "web-codes = " + val_wrap(conf.get_web_codes())
+    selected_code_dir = conf.get_web_codes().lstrip('.')
+    current_dir = os.getcwd().replace("\\", "/")
+    abs_code_dir = current_dir + selected_code_dir
+    config_web_codes = "web-codes = " + val_wrap(abs_code_dir)
 
     configs = [config_resource_naming, config_vm_dns, config_root_user, config_webadm_user, config_web_domain, config_database_key, config_email_address, config_web_codes]
 
@@ -340,29 +352,29 @@ def create_tfvars():
     # Next, Generate detailed report on full stack
     print(colored("Generating Detailed Report...", "green", attrs=["bold"]))
     generate_detailed_report()
+
         
 # -------------------------------------------------------------------------------
 # Generate Report
 # -------------------------------------------------------------------------------
 def generate_detailed_report():
     
-    # TODO: Generate Cloud Config Report
-    external_checks_dir = "./Terraform"
-    json_file_path = "./Configpackage/report.json"
-    report_file_path = "./report/1_report_cloud.pdf"
-    generate_cloud_report(external_checks_dir, json_file_path, report_file_path)
+    # 1. Generate Cloud Config Report
+    json_file_path = f"{config_dir}/report.json"
+    report_file_path = f"{report_dir}/1_report_cloud.pdf"
+    generate_cloud_report(terraform_dir, json_file_path, report_file_path)
+    progress_check(100, "Cloud")
 
-    # TODO: Generate Config Scripts Report
+    # 2. Generate Config Scripts Report
     generate_script_report()
+    progress_check(100, "Scripts")
 
-    # Generate PHP Report
-    # Get all vulnerabilities IDs
-    vuln_ids_arr = []
+    # 3. Generate PHP Report
+    vuln_ids_arr = [] # Get all vulnerabilities IDs
     get_rule_values("id", vuln_ids_arr)
 
-    # Get all php files
-    php_files_dir = "./vulns/" # Specify directory with php file TODO: Get vuln php codes
-    #php_files_dir = conf.get_web_codes()
+    #php_files_dir = "./vulns/" # Specify directory with php file TODO: Get vuln php codes
+    php_files_dir = conf.get_web_codes() # Get all php files "./Terraform/php/" "./vulns/"
     php_files_arr = []
     get_php_files(php_files_dir, php_files_arr)
 
@@ -374,18 +386,23 @@ def generate_detailed_report():
             # Generate results with phpfile, checker(), store_in_dict
             store_results(phpfile, php_vuln_checker2(phpfile, vuln_id), vuln_results_consolidated)
 
-    generate_php_report(vuln_results_consolidated, php_files_dir)
+    generate_php_report(vuln_results_consolidated, php_files_dir, f"{report_dir}/3_report_php.pdf")
+    progress_check(100, "PHP")
 
-    # Merge?
-    # Open report and ask for user prompt to continue
-    merge_pdfs("./report/", "./report/vaporguard.pdf")
+    # Merge and open report and ask for user prompt to continue
+    unix_arr = []
+    unix_time = int(time.time())
+    unix_arr.append(unix_time) # Fingerprinting file with unix time
+    vaporguard_report = f"{report_dir}/{unix_arr[0]}_vaporguard.pdf"
 
-    reports = ["./report/1_report_cloud.pdf", "./report/2_report_scripts.pdf", "./report/3_report_php.pdf"]
-    remove_files(reports)
+    # Merge and Remove
+    merge_reports(vaporguard_report)
+    remove_pre_pdf()
 
-    vaporguard_report = "./report/vaporguard.pdf"
-    os.system(vaporguard_report)
-    webbrowser.open_new_tab(vaporguard_report)
+    # Open Report
+    open_file = vaporguard_report.split('/')
+    cwd = os.getcwd()
+    os.system(f"{cwd}\\{open_file[1]}\\{open_file[2]}")
 
     # Prompt user to proceed
     begin_deployment()
@@ -403,7 +420,7 @@ def begin_deployment():
         # Render .auto.tfvars tfile after user confirmation
         # next
         bannerG()
-        #tf_init()
+        tf_init()
 
     # Do not agree to being deployment
     elif deploy_confirmation.upper() == "N" or deploy_confirmation.upper() == "N":
@@ -433,9 +450,10 @@ def tf_init():
     # Checker for successful Terraform deployment
     success = 0
 
-    sud = os.getcwd() + f"\\{terraformDir}"
+    tf_dir = terraform_dir.split('/')[1]
+    sud = os.getcwd() + f"\\{tf_dir}"
     dir = sud.replace("\\", "/")
-    os.chdir(dir)
+    os.chdir(dir) # ./Terraform
 
     # Terraform init
     tf_init = terraform_init()
@@ -451,7 +469,7 @@ def tf_init():
             if tf_apply == success:
                 print(colored("Please proceed to your domain name provider for domain name binding", "green", attrs=["bold"]))
                 print(colored("Checking for deployment status...", "grey", attrs=["bold"]))
-                os.chdir("../")
+                os.chdir("../") # Project Root
                 time.sleep(10)
 
                 check_count = 0
@@ -500,10 +518,18 @@ def terraform_apply():
 
     return val
 
+def get_terraform_dir():
+    cwd = os.getcwd()
+    tf_dir = f"{cwd}\\{terraform_dir}"
+
+    return tf_dir
+
 # Function to get website status
 def check_web_status():
+    http_url = "http://" + conf.get_web_domain_name()
+    https_url = "https://" + conf.get_web_domain_name()
     try:
-        response = requests.get(conf.get_web_domain_name())
+        response = requests.get(http_url)
         if response.status_code == 200:
             return True
         else:
@@ -526,6 +552,7 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         warningPrint("\nExiting configuration...")
-        #os.chdir(os.getcwd() + f"/{terraformDir}")
+        tf_dir = terraform_dir.split('/')[1]
+        #os.chdir(os.getcwd() + f"/{tf_dir}")
         #os.remove("userconfig.auto.tfvars")
         sys.exit()
