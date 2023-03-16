@@ -32,24 +32,24 @@ function execute_chk() {
 # Setting up HTTPS using let's encrypt cert
 # Commented out to prevent over usage of let's encrypt cert, uncomment to test
 #===================================================================#
-# sudo snap install core
-# sudo snap refresh core
-# sudo snap install --classic certbot
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
 
-# sudo certbot --nginx -d $domain --email $email --agree-tos
-# sudo systemctl restart nginx
+sudo certbot --nginx -d $domain --email $email --agree-tos
+sudo systemctl restart nginx
 
 #===================================================================#
 # Enable HTTP/2 
 # Commented out to prevent over usage of let's encrypt cert, uncomment to test
 #===================================================================#
-# sudo sed -i 's/443 ssl ipv6only=on;/443 ssl http2 ipv6only=on;/' /etc/nginx/sites-available/$domain
-# sudo sed -i 's/listen 443 ssl;/listen 443 ssl http2;/' /etc/nginx/sites-available/$domain
+sudo sed -i 's/443 ssl ipv6only=on;/443 ssl http2 ipv6only=on;/' /etc/nginx/sites-available/$domain
+sudo sed -i 's/listen 443 ssl;/listen 443 ssl http2;/' /etc/nginx/sites-available/$domain
 
 #===================================================================#
 # Enable HSTS
 # Commented out to prevent over usage of let's encrypt cert, uncomment to test
 #===================================================================#
-# sudo sed -i '/^http {/a \       add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;' /etc/nginx/nginx.conf
-# sudo fuser -k 443/tcp
-# sudo systemctl restart nginx
+sudo sed -i '/^http {/a \       add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;' /etc/nginx/nginx.conf
+sudo fuser -k 443/tcp
+sudo systemctl restart nginx

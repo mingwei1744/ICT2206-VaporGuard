@@ -52,5 +52,5 @@ variable "email" {
 variable "web-codes" {
   description = "Directory for web upload"
   type        = string
-  default     = "./Terraform/php/" 
+  default     = "./Terraform/php/"
 }

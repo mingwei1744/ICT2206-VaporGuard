@@ -176,7 +176,7 @@ resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
   }
 
   provisioner "file" {
-    source = "${path.module}/php/"
+    source = var.web-codes
     #destination = "/home/${var.admin-user}/php/"
     destination = "/tmp"
 
