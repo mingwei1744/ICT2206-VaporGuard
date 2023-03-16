@@ -1,0 +1,2 @@
+The `Reports` directory contains all the reports generated during pre-deployment phase.
+The `Reports` file is in PDF format and fingerprinted with the date and time of report generation.
