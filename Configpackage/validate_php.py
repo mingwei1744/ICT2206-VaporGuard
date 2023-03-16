@@ -2,6 +2,7 @@ import json
 import math
 import re
 import os
+from Configpackage.scan_progress import *
 from reportlab.lib.pagesizes import A1, landscape
 from reportlab.lib.pagesizes import A4, portrait
 from reportlab.lib import colors
@@ -183,24 +184,29 @@ def find_var_declaration(filename, var_search_list):
                     break 
 
 # Generate presentable values from the result dictionary
-def generate_php_report(result_dict, php_files_dir):
-    php_report = SimpleDocTemplate("./report/3_report_php.pdf", pagesize=landscape(A1))
+def generate_php_report(result_dict, php_files_dir, output_dir):
+    php_report = SimpleDocTemplate(output_dir, pagesize=landscape(A1))
     styles = getSampleStyleSheet()
     report_info = []
 
-    section_style = styles["Heading1"]
-    section_style.alignment = 0
-    section = "<u>PHP Vulnerability Report</u>"
+    section_style = styles["Title"]
+    section_style.fontSize = 40
+    section_style.leading = 40 * 2
+    section_style.alignment = 1
+    section = "<u>PHP Files Scan Results</u>"
     section_data = Paragraph(section, section_style)
     report_info.append(section_data)
 
     # For each file, and vulnerable codeLines
     for file, codeLines in result_dict.items():
-        print("*"*50)
-        print(f"Potential vulnerability found in: [{file.strip(php_files_dir)}]")
+        #print("*"*50)
+        #print(f"Potential vulnerability found in: [{file.strip(php_files_dir)}]")
+        #progress_check(len(result_dict))
 
-        filename_style = styles["Heading2"]
+        filename_style = styles["Heading1"]
         filename_style.alignment = 0
+        filename_style.fontSize = 24
+        filename_style.leading = 24 * 1.2
         filename_style.textColor = colors.red
         filename = f"Potential vulnerability found in: [{file.strip(php_files_dir)}]"
         filename_data = Paragraph(filename, filename_style)
@@ -234,7 +240,7 @@ def generate_php_report(result_dict, php_files_dir):
                 #print(get_rule_infos(value_split2))
 
                 info = get_rule_infos(value_split2) # CHANGE TO SINGLE STRING FORMAT
-                print(info)
+                #print(info)
                 info_style = styles["Normal"]
                 info_style.fontSize = 14
                 info_style.leading = 14 * 1.2
@@ -245,13 +251,14 @@ def generate_php_report(result_dict, php_files_dir):
 
     php_report.build(report_info)
 
+# Testing
 # if __name__ == "__main__":
 #     # Get all vulnerabilities IDs
 #     vuln_ids_arr = []
 #     get_rule_values("id", vuln_ids_arr)
 
 #     # Get all php files
-#     php_files_dir = "./vulns/" # Specify directory with php file TODO: Get vuln php codes
+#     php_files_dir = "./vulns/" # Specify directory with php file
 #     php_files_arr = []
 #     get_php_files(php_files_dir, php_files_arr)
 

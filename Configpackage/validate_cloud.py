@@ -127,7 +127,7 @@ def chatgpt_request(prompt):
 def generate_cloud_report(external_checks_dir, json_file_path, report_file_path):
 
     # Initialize a runner filter, to do a scan on config based on terraform framework
-    runner_filter = RunnerFilter(framework=["terraform"], include_all_checkov_policies=True)
+    runner_filter = RunnerFilter(framework=["terraform"], include_all_checkov_policies=True, show_progress_bar=False)
     # Initialize a runner
     runner = Runner()
     # Load external checks from current directory, includes main.tf,outputs,providers and etc
@@ -155,7 +155,7 @@ def generate_cloud_report(external_checks_dir, json_file_path, report_file_path)
                 continue
     #Do something to the particular .tf file
 
-
+# Testing
 # if __name__ == "__main__":
 #     # code for the main program here
 #     external_checks_dir = "../Terraform"

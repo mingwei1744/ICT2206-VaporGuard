@@ -1,9 +1,6 @@
 import re
-import json
 import os
-import csv
 import requests
-import time
 
 from reportlab.lib.pagesizes import A1, landscape
 from reportlab.lib.pagesizes import A4, portrait
@@ -146,7 +143,7 @@ def generate_script_report():
 	apt_update_pattern = r"apt(-get)? update(\s-y)?"
 	apt_install_pattern = r"apt(-get)? install(=[\d.]+)?(\s-y)?"
 
-	lemp_report = SimpleDocTemplate("./report/2_report_scripts.pdf", pagesize=landscape(A1))
+	lemp_report = SimpleDocTemplate("./Reports/2_report_scripts.pdf", pagesize=landscape(A1))
 	styles = getSampleStyleSheet()
 	report_info = []
 	lemp_files = get_all_lemp_files()
@@ -154,7 +151,7 @@ def generate_script_report():
 	title_style = styles["Title"]
 	title_style.fontSize = 40
 	title_style.leading = 40 * 2
-	title = f"<u>Validations on tpl files</u>"
+	title = f"<u>Configuration Scripts Scan Results</u>"
 	title_data = Paragraph(title, title_style)
 	report_info.append(title_data)
 
