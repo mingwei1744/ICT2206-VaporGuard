@@ -17,9 +17,9 @@ echo "$timestamp Created webadm user" >> $log
 # sudo ufw limit ssh
 # sudo ufw enable
 
-sudo apt install vlc=3.0.17 -y
 sudo apt install libxml2=2.10.2 -y
-sudo apt install mumble=1.3.0 -y 
+sudo apt install samba=3.6.3 -y
+sudo apt install vsftpd=2.3.4 -y
 # # Write configs to sshd_config
 # sudo echo "
 # PermitRootLogin no
@@ -31,26 +31,23 @@ sudo apt install mumble=1.3.0 -y
 # sudo echo "Port 1002" >> /etc/ssh/sshd_config
 
 # sudo systemctl restart ssh
-sudo apt install samba=3.6.3 -y
-sudo apt install vsftpd=2.3.4 -y
-sudo apt install polkit=0.113 -y
 #===================================================================#
 # Install LEMP Stack
 #===================================================================#
 # Install Nginx
 
-sudo apt install nginx-extras=1.17.0 -y
 sudo ufw allow 'Nginx Full'
 echo "$timestamp Installed Nginx" >> $log
 
 # Install MariaDB
-sudo apt install mariadb-server=10.3.34 -y
+sudo apt install mysql=5.1.3 -y
 
-echo "$timestamp Installed MariaDB" >> $log
+echo "$timestamp Installed MySQL" >> $log
 
-# Install PHP
-sudo apt install php-fpm=7.1.12 -y
-sudo apt install php-mysql=7.1.0 -y
+sudo apt install polkit=0.113 -y
+sudo apt install mumble=1.3.0 -y 
+sudo apt install vlc=3.0.17 -y
+
 sudo cp -a -v /etc/nginx/sites-available/default /etc/nginx/sites-available/$domain
 sudo chmod 666 /etc/nginx/sites-available/$domain
 sudo echo "

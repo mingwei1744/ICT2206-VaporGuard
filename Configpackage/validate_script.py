@@ -91,7 +91,6 @@ def getFileContent(filename):
 
 def CVE_number(pkg_name, pkg_version):
 	link="https://www.cybersecurity-help.cz/vdb/list.php?search_line=Y&filter%5B%25SEARCH%5D={}+{}".format(pkg_name,pkg_version)
-	# print("Querying Vulnerabilities Database on: {} {}".format(pkg_name,pkg_version))
 	source_code = requests.get(link)  # do a get request for html source code
 	plain_text = source_code.text  # convert to plain text
 	soup = BeautifulSoup(plain_text, 'html.parser')  # using bs4 soup to process
@@ -119,11 +118,24 @@ def get_tpl_files(dir, result):
         if os.path.isfile(file_path):
             if file.endswith('.tpl'):
                 result.append(file)
+def cast_severity(result_str):
+	col = "black"
+	if result_str == "Low":
+		col = "green"
+	elif result_str == "Medium":
+		col = "orange"
+	elif result_str == "High":
+		col = "red"
+	return f"|:|Severity:<font color='{col}'>"+result_str+"</font>"
+
+def cast_verify(result_str):
+	col = "orange"
+	if result_str == "Yes":
+		col = "green"
+	return f"|:|Verified:<font color='{col}'>"+result_str+"</font>"
 
 # Functions to scan and generate tpl validation report
 def generate_script_report():
-	apt_update_checked = False
-	validated = False
 	mysqlSecureChecked = False
 	clickable = "Click here for more detail!"
 	mysqlSecureCommands = [	
@@ -158,6 +170,8 @@ def generate_script_report():
 
 		package_flagged = {}
 		sql_flag = False
+		apt_update_checked = False
+		validated = False
 		report_info_len = len(report_info)
 		for i in file_content_list:
 			if not sql_flag:
@@ -211,7 +225,14 @@ def generate_script_report():
 				if query:
 					package_details = []
 					for x in query:
-						package_details.append(x.get_text(" ", strip=True))
+						rs = x.get_text(" ", strip=True)
+						rs = rs.split()
+						last2 = rs[-2:]
+						last2[0] = cast_severity(last2[0])
+						last2[1] = cast_verify(last2[1])
+						last2 = [f"\t{p}" for p in last2]
+						rs = ' '.join(rs[:-3])+"\t["+rs[-3]+"]"+' '.join(last2)
+						package_details.append(rs)
 					package_details.append(url)
 					package_flagged[package_name+' '+package_version] = package_details
 
