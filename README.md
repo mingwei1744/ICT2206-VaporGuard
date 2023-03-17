@@ -38,7 +38,8 @@ pip install -r requirements.txt
 ```
 
 ## Using VaporGuard 🤖
-a) Generate a keypair in the /Terraform/keys directory. Example:
+a) Generate a keypair in the /Terraform/keys directory. <br/>
+Example:
 ```
 cd /Terraform/keys
 ssh-keygen -t ecdsa -b 521
@@ -51,14 +52,16 @@ python vaporguard.py start
 ```
 ![start](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/start.png)
 
-c) Submit the relevant prompts for the infrastructure to be deployed
+c) Submit the relevant prompts for the infrastructure to be deployed.
 ![level1](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level1.png)
 
-d) Analysis will commence once Step c. has been validated
+d) Analysis will commence once Step c. has been validated. A detailed report will then be generated.
 ![level2](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level2.png)
-
-e) A detailed report will be generated prior to the commencement of deployment
 ![report](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/report.png)
+
+e) Commence deployment
+![deploy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
+![resources](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
 ## Teardown 🗑
 a) To remove all objects deployed
