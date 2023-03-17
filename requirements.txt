@@ -6,3 +6,4 @@ reportlab
 PyPDF2~=2.0
 openai
 termcolor
+tqdm
