@@ -52,20 +52,21 @@ ssh-keygen -t ecdsa -b 521
 ```
 ![keypair](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/keypair.png)
 
-<b> b) Start VaporGuard </b>
+<b> b) Start VaporGuard </b> <br/>
 ```
 python vaporguard.py start
 ```
 ![start](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/start.png)
 
-<b> c) Submit the relevant prompts for the infrastructure to be deployed. </b>
+<b> c) Submit the relevant prompts for the infrastructure to be deployed. </b> <br/>
 ![level1](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level1.png)
 
-<b> d) Analysis will commence once Step C. has been validated. A detailed report will then be generated. </b>
+<b> d) Analysis will commence once Step C. has been validated. A detailed report will then be generated. </b> <br/>
 ![level2](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level2.png)
 ![report](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/report.png)
 
-<b> e) Commence deployment </b>
+<b> e) Commence deployment </b> <br/>
+Begin deployment running through the report. To continue deployment, close the report and commence deployment. <br/>
 ![deploy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 Once deployment is successful, the public IP of your web application will be shown. You may verify your resources in the Azure Cloud Portal.
 ![publicip](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
@@ -75,7 +76,7 @@ Example (Porkbun):
 ![porkbun](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
 ## Teardown 🗑
-<b> a) To remove all objects deployed </b>
+<b> a) To remove all objects deployed </b> <br/>
 ```
 python vaporguard.py destroy
 ```
