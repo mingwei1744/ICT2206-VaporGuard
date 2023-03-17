@@ -283,7 +283,7 @@
         "severity": "High",
         "owasp": "A10:2021 - Server-Side Request Forgery (SSRF)",
         "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
-        "fix": "Avoid using dangerous functions with payload data"
+        "fix": "Avoid using dangerous functions with payload data. https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html"
       },
   
       {
