@@ -2,42 +2,42 @@
 Terraform automation deployment according to Lab1 and Lab2 in sequence
 */
 # 1. Create resource group
-resource "azurerm_resource_group" "rg-automate-test" {
+resource "azurerm_resource_group" "rg-vpguard" {
   name     = "${var.naming}-resource-group"
   location = var.location
   tags = {
     unit    = "2206"
-    project = "cloud-automation"
+    project = "vaporguard"
   }
 }
 
 # 2. Create Virtual Network and Subnet
 # Create Virtual Network
-resource "azurerm_virtual_network" "vn-automate-test" {
+resource "azurerm_virtual_network" "vn-vpguard" {
   name                = "${var.naming}-virtual-network"
-  location            = azurerm_resource_group.rg-automate-test.location
-  resource_group_name = azurerm_resource_group.rg-automate-test.name
+  location            = azurerm_resource_group.rg-vpguard.location
+  resource_group_name = azurerm_resource_group.rg-vpguard.name
   address_space       = ["10.2.0.0/16"]
 
   tags = {
     unit    = "2206"
-    project = "cloud-automation"
+    project = "vaporguard"
   }
 }
 
 # Create Subnet
-resource "azurerm_subnet" "sn-automate-test" {
+resource "azurerm_subnet" "sn-vpguard" {
   name                 = "${var.naming}-subnet"
-  resource_group_name  = azurerm_resource_group.rg-automate-test.name
-  virtual_network_name = azurerm_virtual_network.vn-automate-test.name
+  resource_group_name  = azurerm_resource_group.rg-vpguard.name
+  virtual_network_name = azurerm_virtual_network.vn-vpguard.name
   address_prefixes     = ["10.2.0.0/24"]
 }
 
 # 3. Create Security Group
-resource "azurerm_network_security_group" "sg-automate-test" {
+resource "azurerm_network_security_group" "sg-vpguard" {
   name                = "${var.naming}-security-group"
-  location            = azurerm_resource_group.rg-automate-test.location
-  resource_group_name = azurerm_resource_group.rg-automate-test.name
+  location            = azurerm_resource_group.rg-vpguard.location
+  resource_group_name = azurerm_resource_group.rg-vpguard.name
 
   # Security Rule to allow SSH
   #TODO: Remove default SSH port 22 and add port 1002 for SSH
@@ -81,21 +81,21 @@ resource "azurerm_network_security_group" "sg-automate-test" {
 
   tags = {
     unit    = "2206"
-    project = "cloud-automation"
+    project = "vaporguard"
   }
 }
 
 # Associate Security Group to a Subnet
 resource "azurerm_subnet_network_security_group_association" "sg-association" {
-  subnet_id                 = azurerm_subnet.sn-automate-test.id
-  network_security_group_id = azurerm_network_security_group.sg-automate-test.id
+  subnet_id                 = azurerm_subnet.sn-vpguard.id
+  network_security_group_id = azurerm_network_security_group.sg-vpguard.id
 }
 
 # 4. Create Public IP Address to communicate with the internet
-resource "azurerm_public_ip" "pip-automate-test" {
+resource "azurerm_public_ip" "pip-vpguard" {
   name                    = "${var.naming}-publicip"
-  location                = azurerm_resource_group.rg-automate-test.location
-  resource_group_name     = azurerm_resource_group.rg-automate-test.name
+  location                = azurerm_resource_group.rg-vpguard.location
+  resource_group_name     = azurerm_resource_group.rg-vpguard.name
   ip_version              = "IPv4"
   sku                     = "Basic"
   allocation_method       = "Dynamic"
@@ -104,34 +104,34 @@ resource "azurerm_public_ip" "pip-automate-test" {
 
   tags = {
     unit    = "2206"
-    project = "cloud-automation"
+    project = "vaporguard"
   }
 }
 
 # 4. Create Cloud Instances
 # Create Network Interface
-resource "azurerm_network_interface" "nic-automate-test" {
+resource "azurerm_network_interface" "nic-vpguard" {
   name                = "${var.naming}-nic"
-  location            = azurerm_resource_group.rg-automate-test.location
-  resource_group_name = azurerm_resource_group.rg-automate-test.name
+  location            = azurerm_resource_group.rg-vpguard.location
+  resource_group_name = azurerm_resource_group.rg-vpguard.name
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.sn-automate-test.id
+    subnet_id                     = azurerm_subnet.sn-vpguard.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.pip-automate-test.id
+    public_ip_address_id          = azurerm_public_ip.pip-vpguard.id
   }
 }
 
 # Create Virtual Machine
-resource "azurerm_linux_virtual_machine" "vmachine-automate-test" {
+resource "azurerm_linux_virtual_machine" "vmachine-vpguard" {
   name                = "${var.naming}-vmachine"
-  resource_group_name = azurerm_resource_group.rg-automate-test.name
-  location            = azurerm_resource_group.rg-automate-test.location
+  resource_group_name = azurerm_resource_group.rg-vpguard.name
+  location            = azurerm_resource_group.rg-vpguard.location
 
   size                  = "Standard_B1s"
   admin_username        = var.admin-user
-  network_interface_ids = [azurerm_network_interface.nic-automate-test.id]
+  network_interface_ids = [azurerm_network_interface.nic-vpguard.id]
 
   # Cloud-init file, this script will be called with Virtual Machine has been deployed successfully
   //custom_data = filebase64("${path.module}/scripts/lempstack.tpl")
