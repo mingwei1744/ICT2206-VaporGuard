@@ -9,8 +9,8 @@
         "message": "The 'phpinfo' function may reveal sensitive information about your environment.",
         "severity": "Medium",
         "owasp": "A01:2021 - Broken Access Control",
-        "cwe": "",
-        "fix": ""
+        "cwe": "CWE-200: Exposure of Sensitive Information",
+        "fix": "Recommended to remove phpinfo page in production environment."
       },
   
       {
@@ -23,7 +23,7 @@
         "severity": "Low",
         "owasp": "A01:2021 - Broken Access Control",
         "cwe": "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
-        "fix": ""
+        "fix": "Avoid using user-controlled input for redirection."
       },
   
       {
@@ -36,7 +36,7 @@
         "severity": "Medium",
         "owasp": "A01:2021 - Broken Access Control",
         "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
-        "fix": ""
+        "fix": "Avoid using user-controlled input for unlinking files."
       },
   
       {
@@ -75,7 +75,7 @@
         "severity": "Low",
         "owasp": "A02:2021 - Cryptographic Failures",
         "cwe": "CWE-319: Cleartext Transmission of Sensitive Information",
-        "fix": ""
+        "fix": "SSL verification should be enabled"
       },
   
       {
@@ -101,7 +101,7 @@
         "severity": "Medium",
         "owasp": "A02:2021 - Cryptographic Failures",
         "cwe": "CWE-329: Generation of Predictable IV with CBC Mode",
-        "fix": ""
+        "fix": "Avoid using static IV for AES-CBC mode."
       },
   
       {
@@ -114,7 +114,7 @@
         "severity": "Medium",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-98: Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')",
-        "fix": ""
+        "fix": "Valid user input thoroughly or explicitly specify what to include."
       },
   
       {
@@ -127,7 +127,7 @@
         "severity": "Medium",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-98: Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')",
-        "fix": ""
+        "fix": "Valid user input thoroughly or explicitly specify what to include"
       },
   
       {
@@ -140,7 +140,7 @@
         "severity": "High",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-        "fix": ""
+        "fix": "Avoid using user-controlled input for execution commands."
       },
   
       {
@@ -153,7 +153,7 @@
         "severity": "Medium",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
-        "fix": ""
+        "fix": "Avoid using user-controlled input for assert command."
       },
   
       {
@@ -166,7 +166,7 @@
         "severity": "High",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
-        "fix": ""
+        "fix": "Avoid using user-controlled input for eval command."
       },
   
       {
@@ -179,7 +179,7 @@
         "severity": "Medium",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-        "fix": ""
+        "fix": "Avoid using user-controlled input for mb_ereg_replace."
       },
   
       {
@@ -192,7 +192,7 @@
         "severity": "Low",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting')",
-        "fix": ""
+        "fix": "Avoid using user-controlled input in HTTP header."
       },
   
       {
@@ -205,7 +205,7 @@
         "severity": "High",
         "owasp": "A03:2021 - Injection",
         "cwe": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
-        "fix": ""
+        "fix": "Avoid using backticks with user-controlled input. Consider using execution commands with proper input validation."
       },
 
       {
@@ -283,7 +283,7 @@
         "severity": "High",
         "owasp": "A10:2021 - Server-Side Request Forgery (SSRF)",
         "cwe": "CWE-918: Server-Side Request Forgery (SSRF)",
-        "fix": ""
+        "fix": "Avoid using dangerous functions with payload data"
       },
   
       {
