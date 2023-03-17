@@ -94,7 +94,7 @@ def generate_report(json_file_path, report_file_path):
     section_header_style.alignment = 1  # Center alignment
 
     # Create the section header Paragraph object
-    section_header = Paragraph("Terraform Scan Results", section_header_style)
+    section_header = Paragraph("Cloud Configuration Scan Results", section_header_style)
 
     # Add the section header and table to the PDF
     doc.build([section_header, Spacer(1, 20), table])
