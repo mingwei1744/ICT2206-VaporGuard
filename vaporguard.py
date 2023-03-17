@@ -488,7 +488,7 @@ def tf_init():
                     time.sleep(60)
                     check_web_status()
 
-                    if check_count == 15:
+                    if check_count == 45:
                         warningPrint("Exceeded configuration time. Please check on Terraform output")
                         sys.exit()
 
