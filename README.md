@@ -55,13 +55,18 @@ python vaporguard.py start
 c) Submit the relevant prompts for the infrastructure to be deployed.
 ![level1](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level1.png)
 
-d) Analysis will commence once Step c. has been validated. A detailed report will then be generated.
+d) Analysis will commence once Step C. has been validated. A detailed report will then be generated.
 ![level2](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level2.png)
 ![report](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/report.png)
 
 e) Commence deployment
 ![deploy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
-![resources](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
+Once deployment is successful, the public IP of your web application will be shown. You may verify your resources in the Azure Cloud Portal.
+![publicip](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
+
+f) Bind the public IP of your web application to the domain name submitted in Step C. <br/>
+Example (Porkbun):
+![porkbun](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
 ## Teardown 🗑
 a) To remove all objects deployed
