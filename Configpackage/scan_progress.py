@@ -12,7 +12,7 @@ def progress_check(checker, msg):
     items = list(range(checker))
 
     # Initialize a tqdm progress bar with colored output
-    with tqdm(total=len(items), desc=f"Validating {msg} config", bar_format="{desc}: {percentage:.0f}%|{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}{postfix}]") as pbar:
+    with tqdm(total=len(items), desc=f"Validating {msg} config", bar_format="{desc}: {percentage:.0f}%|{bar}| {n_fmt}/{total_fmt} [{postfix}]", ncols=100) as pbar:
         # Process each item and update the progress bar
         for item in items:
             running_process()
