@@ -82,9 +82,18 @@ def start():
 
 # Function to check valid naming convention for Azure resources
 def check_valid_naming(input_str):
-    if not any(char.isalpha() for char in input_str):
+    if len(input_str) <= 3:
         return False
-    return all(char.isalnum() and len(input_str) >=3 or char == '-' for char in input_str)
+    if not input_str.replace('-', '').isalnum():
+        return False
+    if '-' in input_str:
+        parts = input_str.split('-')
+        for part in parts:
+            if not part.islower():
+                return False
+    elif not input_str.islower():
+        return False
+    return True
 
 # Function to get resource name
 def config_resource_name():

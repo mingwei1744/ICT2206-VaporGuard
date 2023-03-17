@@ -19,8 +19,8 @@ def progress_check(checker, msg):
             pbar.update(1)
             # Change the color of the progress bar based on the progress
             if pbar.n <= len(items) * 0.5:
-                pbar.set_postfix_str(Fore.MAGENTA + " Scanning..." + Style.RESET_ALL)
+                pbar.set_postfix_str(Fore.MAGENTA + "Scanning..." + Style.RESET_ALL)
             elif pbar.n <= len(items) * 0.8:
-                pbar.set_postfix_str(Fore.YELLOW + " Scanning..." + Style.RESET_ALL)
+                pbar.set_postfix_str(Fore.YELLOW + "Scanning..." + Style.RESET_ALL)
             elif pbar.n == len(items) * 1:
-                pbar.set_postfix_str(Fore.GREEN + " Done" + Style.RESET_ALL)
+                pbar.set_postfix_str(Fore.GREEN + "Done" + Style.RESET_ALL)

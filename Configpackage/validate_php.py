@@ -208,7 +208,7 @@ def generate_php_report(result_dict, php_files_dir, output_dir):
         filename_style.fontSize = 24
         filename_style.leading = 24 * 1.2
         filename_style.textColor = colors.red
-        filename = f"Potential vulnerability found in: [{file.strip(php_files_dir)}]"
+        filename = f"Potential vulnerability found in: [{file[len(php_files_dir):]}]"
         filename_data = Paragraph(filename, filename_style)
         report_info.append(filename_data)
 
