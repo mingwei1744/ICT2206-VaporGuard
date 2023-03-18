@@ -125,7 +125,7 @@ def checker_iter2(iter1, vuln_id):
 
     return results
 
-#TODO: Analyse High Entropy Strings and add potential vulns to report
+#FI: Analyse High Entropy Strings and add potential vulns to report
 # Function for shannon entropy of each php file
 def shannon_entropy(data, iter):
     if not data:
@@ -137,7 +137,7 @@ def shannon_entropy(data, iter):
             entropy += - p_x*math.log(p_x, 2)
     return entropy
 
-#TODO: Checker Functions for SQLINJECT, XSS, SESSIONS and high false positive rules in php_rules.json
+#FI: Checker Functions for SQLINJECT, XSS, SESSIONS and high false positive rules in php_rules.json
 # Function to analyse var declaration to reduce false positives where static value is declared in variable
 def check_var_declaration(potential_vuln_code, filename):
     # List of potential vuln ids that may return false positives if based solely on pattern matching
@@ -177,9 +177,8 @@ def find_var_declaration(filename, var_search_list):
                     vulnPattern = f"\\${varStrip}\\s*=\\s*\\$_(GET|POST|PUT|DELETE|REQUEST|COOKIE)\\[[\\x00-\\x7F]+\\]"
                     vulnMatch = re.search(vulnPattern, line)
 
-                    # Vulnerable declaration line found
+                    # FI: Vulnerable declaration line found
                     if vulnMatch:
-                        #TODO: Do something
                         print(line)
                     break 
 
