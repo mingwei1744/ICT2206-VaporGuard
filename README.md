@@ -104,4 +104,4 @@ python vaporguard.py destroy
 ![destroy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/destroy.png)
 
  ## Youtube Demo 📹
-[![Watch the video](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/thumbnail.png)]([https://youtu.be/nTQUwghvy5Q](https://www.youtube.com/watch?v=H0T3Ft_bDA4))
+[![Watch the video](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/thumbnail.png)](https://youtu.be/H0T3Ft_bDA4)
