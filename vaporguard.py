@@ -562,6 +562,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         warningPrint("\nExiting configuration...")
         tf_dir = terraform_dir.split('/')[1]
-        #os.chdir(os.getcwd() + f"/{tf_dir}")
-        #os.remove("userconfig.auto.tfvars")
+        os.chdir(os.getcwd() + f"/{tf_dir}")
+        os.remove("userconfig.auto.tfvars")
         sys.exit()
