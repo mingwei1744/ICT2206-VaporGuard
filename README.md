@@ -4,10 +4,10 @@ ICT2206 Web Security Assignment-1. The development of a defensive web applicatio
 </div>
 
 <div align="center">
-<h1> VapourGuard 🛡️ </h1>
+<h1> VaporGuard 🛡️ </h1>
   <p> Cloud security is a crucial aspect in today's digital landscape. The increasing adoption of cloud infrastructure to host web applications has motivated us to develop this tool, VaporGuard. </p>
   <p> This tool focuses on validating web pre-deployments on a content delivery platform. Both the cloud configurations and web framework configurations will be analysed in a pre-deployment environment. </p>
-  <img src="https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png" style="width: 75%; height: auto;"/>
+  <img src="https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/logo.png" style="width: 75%; height: auto;"/>
 </div>
 <br />
 
@@ -44,41 +44,49 @@ pip install -r requirements.txt
 </div>
 
 ## Starting deployment 🤖
-<b> a) Generate a keypair in the /Terraform/keys directory. </b> <br/>
-Example:
+<b> a) Define your keypairs, cloud-init scripts and PHP files. </b> <br/>
+* Generate a keypair in the /Terraform/keys directory:
 ```
 cd /Terraform/keys
 ssh-keygen -t ecdsa -b 521
 ```
 ![keypair](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/keypair.png)
+<br />
+
+* Upload your PHP codes in the /Terraform/html directory. <br/>
+![php](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/php.png)
+<br />
 
 <b> b) Start VaporGuard </b> <br/>
 ```
 python vaporguard.py start
 ```
 ![start](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/start.png)
+<br />
 
 <b> c) Submit the relevant prompts for the infrastructure to be deployed. </b> <br/>
 ![level1](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level1.png)
+<br />
 
 <b> d) Analysis will commence once Step C. has been validated. A detailed report will then be generated. </b> <br/>
 ![level2](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level2.png)
 ![report](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/report.png)
+<br />
 
 <b> e) Commence deployment </b> <br/>
-Begin deployment running through the report. To continue deployment, close the report and commence deployment. <br/>
-![deploy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
+After reviewing through the vulnerability report, to continue deployment, close the report and proceed. <br/>
+![deploy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/deploy.png)
 Once deployment is successful, the public IP of your web application will be shown. You may verify your resources in the Azure Cloud Portal.
-![publicip](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
+![publicip](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/publicip.png)
+<br />
 
 <b> f) Bind the public IP of your web application to the domain name submitted in Step C. </b> <br/>
-Example (Porkbun):
-![porkbun](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
 
 ## Teardown 🗑
 <b> a) To remove all objects deployed </b> <br/>
 ```
 python vaporguard.py destroy
 ```
-![destroy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/todo.png)
+![teardown](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/teardown.png)
+![destroy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/destroy.png)
 
