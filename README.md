@@ -7,7 +7,7 @@ ICT2206 Web Security Assignment-1. The development of a defensive web applicatio
 <h1> VaporGuard 🛡️ </h1>
   <p> Cloud security is a crucial aspect in today's digital landscape. The increasing adoption of cloud infrastructure to host web applications has motivated us to develop this tool, VaporGuard. </p>
   <p> This tool focuses on validating web pre-deployments on a content delivery platform. Both the cloud configurations and web framework configurations will be analysed in a pre-deployment environment. </p>
-  <img src="https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/logo.png" style="width: 75%; height: auto;"/>
+  <img src="https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/logo.png" style="width: auto; height: auto;"/>
 </div>
 <br />
 
@@ -54,6 +54,9 @@ ssh-keygen -t ecdsa -b 521
 <br />
 
 * Upload your PHP codes in the /Terraform/html directory. <br/>
+```
+cd /Terraform/html
+```
 ![php](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/php.png)
 <br />
 
@@ -76,7 +79,8 @@ python vaporguard.py start
 <b> e) Commence deployment </b> <br/>
 After reviewing through the vulnerability report, to continue deployment, close the report and proceed. <br/>
 ![deploy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/deploy.png)
-Once deployment is successful, the public IP of your web application will be shown. You may verify your resources in the Azure Cloud Portal.
+<br/>
+Once deployment is successful, the public IP of your web application will be shown. You may verify your resources in the Azure Cloud Portal. <br/>
 ![publicip](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/publicip.png)
 <br />
 
