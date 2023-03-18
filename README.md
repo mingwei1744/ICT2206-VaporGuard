@@ -7,7 +7,7 @@ ICT2206 Web Security Assignment-1. The development of a defensive web applicatio
 <h1> VaporGuard 🛡️ </h1>
   <p> Cloud security is a crucial aspect in today's digital landscape. The increasing adoption of cloud infrastructure to host web applications has motivated us to develop this tool, VaporGuard. </p>
   <p> This tool focuses on validating web pre-deployments on a content delivery platform. Both the cloud configurations and web framework configurations will be analysed in a pre-deployment environment. </p>
-  <img src="https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/logo.png" style="width: 75%; height: auto;"/>
+  <img src="https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/logo.png" style="width: auto; height: auto;"/>
 </div>
 <br />
 
@@ -54,6 +54,9 @@ ssh-keygen -t ecdsa -b 521
 <br />
 
 * Upload your PHP codes in the /Terraform/html directory. <br/>
+```
+cd /Terraform/html
+```
 ![php](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/php.png)
 <br />
 
@@ -70,13 +73,22 @@ python vaporguard.py start
 
 <b> d) Analysis will commence once Step C. has been validated. A detailed report will then be generated. </b> <br/>
 ![level2](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/level2.png)
+<br />
 ![report](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/report.png)
 <br />
+
+<b><ins> Report Structure </ins></u>
+|Result Sections |Parameters      |
+|----------------|----------------|
+|Cloud Configs|<ul><li>check ID</li><li>File</li><li>Line</li><li>Potential CVE/CWE</li><li>Guildline URL</li><li>Status</li</ul>|
+|Scripts Configs|<ul><li>File name</li><li>Line</li><li>Severity</li><li>Verified</li><li>Details</li></ul>|
+|PHP Configs|<ul><li>File name</li><li>Line</li><li>Vulnerability ID</li><li>Details</li><li>Serverity</li><li>OWAPS #</li><li>CWE #</li><li>Recommendations</li></ul>|
 
 <b> e) Commence deployment </b> <br/>
 After reviewing through the vulnerability report, to continue deployment, close the report and proceed. <br/>
 ![deploy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/deploy.png)
-Once deployment is successful, the public IP of your web application will be shown. You may verify your resources in the Azure Cloud Portal.
+<br/>
+Once deployment is successful, the public IP of your web application will be shown. You may verify your resources in the Azure Cloud Portal. <br/>
 ![publicip](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/publicip.png)
 <br />
 
@@ -88,5 +100,6 @@ Once deployment is successful, the public IP of your web application will be sho
 python vaporguard.py destroy
 ```
 ![teardown](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/teardown.png)
+<br />
 ![destroy](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/destroy.png)
 
