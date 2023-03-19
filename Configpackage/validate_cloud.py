@@ -1,6 +1,7 @@
 import os
 import textwrap
 import re
+import sys
 from hcl import *
 import requests.exceptions
 from checkov.runner_filter import RunnerFilter
@@ -99,6 +100,14 @@ def generate_report(json_file_path, report_file_path):
     # Add the section header and table to the PDF
     doc.build([section_header, Spacer(1, 20), table])
 
+def get_openapi_key():
+    openapi = "./Configpackage/openapi_key"
+    with open(openapi, 'r') as f:
+        token = f.readlines()
+        for i in range(len(token)):
+            if token[i].strip() == '[token]':
+                return token[i+1].strip()
+        return None
 
 def read_config_file(config_file_path):
     with open(config_file_path, 'r') as f:
@@ -113,14 +122,18 @@ def chatgpt_request(prompt):
     if elapsed_time < min_time_between_requests:
         time.sleep(min_time_between_requests - elapsed_time)
     # Make the API request
-    openai.api_key = "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"
+    openai.api_key = get_openapi_key()
     model = "text-davinci-003"
     #When the temperature is set to a low value, the model will tend to produce more conservative or predictable responses
     temperature = 0.2
-    response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=500,  temperature=temperature)
-    generated_text = response.choices[0].text
-    # Update the last request time
-    last_request_time = time.time()
+    try:
+        response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=500,  temperature=temperature)
+        generated_text = response.choices[0].text
+        # Update the last request time
+        last_request_time = time.time()
+    except openai.error.AuthenticationError as e:
+        print(f"Open API Error: {e}")
+        sys.exit()
     #print(generated_text)
     return generated_text
 
