@@ -37,6 +37,7 @@ az login
 ![azlogin](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/azlogin.png)
 <b> 4. Request for OpenAI API key </b> <br />
 * Generate an OpenAI API key here, https://platform.openai.com/account/api-keys
+![OpenAIAPIKey](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/openai_request_API_key.jpg)
 * Replace the openai.api_key in the Configpackage/validate_cloud.py
 ```
     # Make the API request with your own API KEY
