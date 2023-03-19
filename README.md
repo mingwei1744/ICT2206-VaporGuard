@@ -41,7 +41,7 @@ az login
 ![OpenAIAPIKey](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/openai_request_API_key.jpg)
 <br />
 
-> Replace the openai.api_key in the Configpackage/openapi_key
+> Replace the open api key in Configpackage/openapi_key
 
 ![youropenapi](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/youropenapi.png)
 
