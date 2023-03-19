@@ -100,8 +100,8 @@ def generate_report(json_file_path, report_file_path):
     # Add the section header and table to the PDF
     doc.build([section_header, Spacer(1, 20), table])
 
-def get_openapi_key():
-    openapi = "./Configpackage/openapi_key"
+def get_openai_key():
+    openapi = "./Configpackage/openai_key"
     with open(openapi, 'r') as f:
         token = f.readlines()
         for i in range(len(token)):
@@ -122,7 +122,7 @@ def chatgpt_request(prompt):
     if elapsed_time < min_time_between_requests:
         time.sleep(min_time_between_requests - elapsed_time)
     # Make the API request
-    openai.api_key = get_openapi_key()
+    openai.api_key = get_openai_key()
     model = "text-davinci-003"
     #When the temperature is set to a low value, the model will tend to produce more conservative or predictable responses
     temperature = 0.2
@@ -132,7 +132,7 @@ def chatgpt_request(prompt):
         # Update the last request time
         last_request_time = time.time()
     except openai.error.AuthenticationError as e:
-        print(f"Open API Error: {e}")
+        print(f"Open AI API Error: {e}")
         sys.exit()
     #print(generated_text)
     return generated_text
