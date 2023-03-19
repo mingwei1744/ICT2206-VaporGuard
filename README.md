@@ -18,6 +18,7 @@ Vaporguard is tested on Windows environment. For Linux environment, please downl
 * Azure cloud account
 * Terraform
 * Python3
+* OpenAI API key
 * Any PDF reader (Browser, Adobe Reader etc.)
 
 ### Setup 🛠️
@@ -34,8 +35,14 @@ terraform --version
 az login
 ```
 ![azlogin](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/azlogin.png)
-
-<b> 4. Install python dependencies </b> <br />
+<b> 4. Request for OpenAI API key </b> <br />
+* Generate an OpenAI API key here, https://platform.openai.com/account/api-keys
+* Replace the openai.api_key in the Configpackage/validate_cloud.py
+```
+    # Make the API request with your own API KEY
+    openai.api_key = "sk-12345"
+```
+<b> 5. Install python dependencies </b> <br />
 ```
 pip install -r requirements.txt
 ```
