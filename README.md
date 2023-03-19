@@ -38,12 +38,12 @@ az login
 <br />
 
 <b> 4. Request for OpenAI API key </b> <br />
-> Generate an OpenAI API key here, https://platform.openai.com/account/api-keys <br />
+> Generate an <b> [OpenAI API Key](https://platform.openai.com/account/api-keys) </b> <br />
 
 ![OpenAIAPIKey](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/openai_request_API_key.jpg)
 <br />
 
-> Replace the open api key in Configpackage/openapi_key <br />
+> Replace the OpenAI api key in /Configpackage/openai_key <br />
 
 ![youropenapi](https://github.com/mingwei1744/ICT2206-VapourGuard/blob/main/Images/youropenapi.png)
 <br />
