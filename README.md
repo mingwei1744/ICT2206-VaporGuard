@@ -93,7 +93,7 @@ python vaporguard.py start
 <b><ins> Report Structure </ins></u>
 |Result Sections |Parameters      |
 |----------------|----------------|
-|Cloud Configs|<ul><li>check ID</li><li>File</li><li>Line</li><li>Potential CVE/CWE</li><li>Guildline URL</li><li>Status</li</ul>|
+|Cloud Configs|<ul><li>check ID</li><li>File</li><li>Line</li><li>Potential CVE/CWE</li><li>Guildline URL</li><li>Status</li></ul>|
 |Scripts Configs|<ul><li>File name</li><li>Line</li><li>Severity</li><li>Verified</li><li>Details</li></ul>|
 |PHP Configs|<ul><li>File name</li><li>Line</li><li>Vulnerability ID</li><li>Details</li><li>Serverity</li><li>OWAPS #</li><li>CWE #</li><li>Recommendations</li></ul>|
 
